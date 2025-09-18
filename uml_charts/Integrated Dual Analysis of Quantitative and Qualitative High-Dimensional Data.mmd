@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+   note over H,A: Visualization
+    A ->> H: Compute [overview]
+    H ->> A: Select [subset]
+    A ->> H: Update [statistics]
+    H ->> A: Explore [dimensions]
+    A ->> H: Highlight [deviation]
+
+    note over H,A: Insight Synthesis
+    opt Missingness
+        A ->> H: Encode [transparency]
+        H ->> A: Filter [values]
+    end
+    opt Hypothesis
+        H ->> A: Form [hypothesis]
+        A ->> H: Show [correlation]
+    end

@@ -1,0 +1,26 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [table]
+
+    note over H,A: Data Preparation
+    A ->> A: Extract [features]
+    A ->> A: Plan [actions]
+
+    note over H,A: Visualization
+    par Two-Stage Process
+        A ->> A: Transform [structure]
+        A ->> A: Select [block]
+        A ->> A: Embed [visualization]
+    end
+    A ->> H: Show [result]
+
+    note over H,A: Insight Synthesis
+    alt Feedback
+        H ->> A: Accept [feedback]
+    else
+        H ->> A: Reject [feedback]
+    end
+    A ->> A: Update [policy]

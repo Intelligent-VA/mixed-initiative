@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [table]
+    A ->> A: Parse [model]
+    H ->> A: Apply [transformation]
+
+    note over H,A: Visualization
+    A ->> H: Update [table]
+    H ->> A: Select [TableUnit]
+    A ->> H: Recommend [blocks]
+    H ->> A: Choose [template]
+    H ->> A: Configure [mapping]
+    A ->> H: Render [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Iteration
+        H ->> A: Refine [unit]
+        A ->> H: Revise [recommendation]
+    end

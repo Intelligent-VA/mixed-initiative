@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Excel-style Filter Table</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    window.mermaid = mermaid;
+    mermaid.initialize({ startOnLoad: false });
+  </script>
+  <style>
+    .tag {
+      display: inline-block;
+      padding: 2px 6px;
+      margin: 2px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: white;
+    }
+
+    .link-col {
+      max-width: 100px;
+      white-space: normal;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    td {
+      max-height: 200px;
+      overflow: auto;
+      vertical-align: top;
+      border: 1px solid #e5e7ebc2;
+    }
+
+    .uml-img {
+      min-width: 200px;
+      max-width: 500px;
+      max-height: 200px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .merged-cell {
+      border: 1px solid #e5e7ebc2;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+
+<body class="p-6">
+  <h1 class="text-2xl font-bold mb-4">📊 Table for Mixed-Initiative Data Analysis</h1>
+
+  <div class="overflow-x-auto bg-white shadow rounded-lg relative">
+    <table id="dataTable" class="min-w-full text-sm text-left">
+      <thead class="bg-gray-200" id="tableHead"></thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <script>
+    const colors = {
+      publisher: { "IUI": "bg-fuchsia-500", "CHI": "bg-rose-500", "UIST": "bg-indigo-500", "TVCG": "bg-sky-500", "CGF": "bg-green-500" },
+      stage: { "Data Preparation": "bg-purple-500", "Visualization": "bg-orange-500", "Insight Synthesis": "bg-blue-500", "Goal Setting": "bg-teal-500" },
+      controls: { "Sequential": "bg-gray-400", "Repetitive": "bg-pink-400", "Decision": "bg-red-500", "Parallel": "bg-indigo-500", "None": "bg-gray-300" },
+      targetUser: { "domain expert": "bg-red-500", "general user": "bg-blue-500", "novice/general": "bg-gray-500" },
+      modality: { "Text": "bg-cyan-500", "Vis": "bg-indigo-400", "Code": "bg-yellow-500", "Widget": "bg-emerald-500", "Speech": "bg-pink-500", "Sketch": "bg-lime-500" },
+      level: { "Low": "bg-red-400", "Medium": "bg-orange-400", "High": "bg-green-500" },
+      persistence: { "One-shot": "bg-red-400", "Continuous": "bg-green-500" }
+    };
+
+    function renderTag(value, map, defaultColor = "bg-gray-300") {
+      const color = map[value] || defaultColor;
+      return `<span class="tag ${color}">${value}</span>`;
+    }
+    function renderMultiTag(values, map, defaultColor) {
+      return values.split(/[, ]+/).map(v => v.trim()).filter(v => v).map(v => renderTag(v, map, defaultColor)).join("");
+    }
+
+    Papa.parse("final.csv", {
+      download: true,
+      header: true,
+      complete: function (results) {
+        const data = results.data.filter(row => Object.values(row).some(v => v !== ""));
+        const columns = results.meta.fields;
+
+        const mergeColumns = ["ID", "Paper", "Year", "Publisher", "Link", "UML", "UML_Image"];
+        const filterColumns = [
+          "Publisher", "Stage", "Controls", "Target user", "Persistence",
+          "Human Roles", "AI Roles", "Human modality", "AI modality",
+          "Efficiency", "Reliability", "Interuption", "Expressive", "Interpretability", "Year"
+        ];
+        const activeFilters = {};
+
+        const thead = document.getElementById("tableHead");
+        const trHead = document.createElement("tr");
+        columns.forEach(col => {
+          const th = document.createElement("th");
+          th.className = "px-4 py-2 relative";
+          th.textContent = col;
+
+          if (filterColumns.includes(col)) {
+            const filterIcon = document.createElement("span");
+            filterIcon.textContent = "▼";
+            filterIcon.className = "ml-1 cursor-pointer text-gray-600 text-xs";
+            filterIcon.addEventListener("click", (e) => openFilterMenu(e, col));
+            th.appendChild(filterIcon);
+          }
+          trHead.appendChild(th);
+        });
+        thead.appendChild(trHead);
+
+        // === 渲染表体 ===
+        function renderTableBody(rowsData) {
+          const tbody = document.getElementById("tableBody");
+          tbody.innerHTML = "";
+
+          const groupedData = [];
+          let currentPaper = "", currentGroup = [];
+          rowsData.forEach(row => {
+            const paperName = row["Paper"] || "";
+            if (paperName !== currentPaper) {
+              if (currentGroup.length > 0) groupedData.push(currentGroup);
+              currentPaper = paperName;
+              currentGroup = [row];
+            } else currentGroup.push(row);
+          });
+          if (currentGroup.length > 0) groupedData.push(currentGroup);
+
+          groupedData.forEach(rows => {
+            const rowCount = rows.length;
+            rows.forEach((row, rowIndex) => {
+              const tr = document.createElement("tr");
+              columns.forEach(col => {
+                if (mergeColumns.includes(col) && rowIndex > 0) return;
+                const td = document.createElement("td");
+                td.className = "px-4 py-2";
+                if (mergeColumns.includes(col) && rowIndex === 0 && rowCount > 1) {
+                  td.rowSpan = rowCount;
+                  td.className = "px-4 py-2 merged-cell";
+                }
+
+                if (col === "Link" && row[col]) {
+                  td.className += " link-col";
+                  td.innerHTML = `<a href="${row[col]}" target="_blank" class="text-blue-600 underline">${row[col]}</a>`;
+                } else if (col === "Publisher" && row[col]) td.innerHTML = renderTag(row[col], colors.publisher);
+                else if (col === "Stage" && row[col]) td.innerHTML = renderTag(row[col], colors.stage);
+                else if (col === "Controls" && row[col]) td.innerHTML = renderTag(row[col], colors.controls);
+                else if (col === "Human Roles" && row[col]) td.innerHTML = renderMultiTag(row[col], {}, "bg-blue-600");
+                else if (col === "AI Roles" && row[col]) td.innerHTML = renderMultiTag(row[col], {}, "bg-green-600");
+                else if (col === "Human modality" && row[col]) td.innerHTML = renderMultiTag(row[col], colors.modality);
+                else if (col === "AI modality" && row[col]) td.innerHTML = renderMultiTag(row[col], colors.modality);
+                else if (["Efficiency", "Reliability", "Expressive", "Interpretability", "Interuption"].includes(col) && row[col]) td.innerHTML = renderTag(row[col], colors.level);
+                else if (col === "Persistence" && row[col]) td.innerHTML = renderTag(row[col], colors.persistence);
+                else if (col === "Target user" && row[col]) td.innerHTML = renderTag(row[col], colors.targetUser);
+                else if (col === "UML" && row[col]) td.innerHTML = `<pre class="whitespace-pre-wrap text-xs bg-gray-50 p-2 rounded border" style="max-height:250px; width:210px; overflow:auto;">${row[col]}</pre>`;
+                else if (col === "UML_Image" && row["Paper"]) {
+                  const safeName = row["Paper"].replace(/[\/\\:]/g, "_");
+                  td.innerHTML = `<img src="uml_charts/${safeName}.png" class="uml-img border rounded shadow"/>`;
+                } else td.textContent = row[col] || "";
+                tr.appendChild(td);
+              });
+              tbody.appendChild(tr);
+            });
+          });
+        }
+
+        // === 收集唯一值 ===
+        function collectUniqueValues(col) {
+          let values = [];
+          data.forEach(row => {
+            if (row[col]) {
+              if (["Human Roles", "AI Roles", "Human modality", "AI modality"].includes(col)) {
+                values.push(...row[col].split(/[, ]+/).map(v => v.trim()));
+              } else values.push(row[col]);
+            }
+          });
+          return [...new Set(values)].filter(v => v).sort();
+        }
+
+        // === 打开筛选菜单 ===
+        function openFilterMenu(event, col) {
+          closeFilterMenu();
+          const values = collectUniqueValues(col);
+
+          const menu = document.createElement("div");
+          menu.className = "absolute bg-white border rounded shadow p-2 z-50 w-56 max-h-80 overflow-auto text-sm";
+          menu.style.top = event.target.getBoundingClientRect().bottom + window.scrollY + "px";
+          menu.style.left = event.target.getBoundingClientRect().left + "px";
+
+          // 当前选中项
+          const selectedValues = activeFilters[col] || [];
+
+          // 全选
+          const divAll = document.createElement("div");
+          const selectAll = document.createElement("input");
+          selectAll.type = "checkbox";
+          selectAll.className = "mr-2";
+          const labelAll = document.createElement("label");
+          labelAll.textContent = "(全选)";
+          divAll.appendChild(selectAll);
+          divAll.appendChild(labelAll);
+          menu.appendChild(divAll);
+
+          // 选项
+          const optionsContainer = document.createElement("div");
+          values.forEach(v => {
+            const div = document.createElement("div");
+            const cb = document.createElement("input");
+            cb.type = "checkbox";
+            cb.value = v;
+            cb.className = "mr-2";
+
+            // === 恢复状态 ===
+            if (selectedValues.length === 0 || selectedValues.includes(v)) {
+              cb.checked = true;
+            } else {
+              cb.checked = false;
+            }
+
+            const label = document.createElement("label");
+            label.textContent = v;
+            div.appendChild(cb);
+            div.appendChild(label);
+            optionsContainer.appendChild(div);
+          });
+          menu.appendChild(optionsContainer);
+
+          // 更新全选状态
+          function updateSelectAll() {
+            const allCbs = [...optionsContainer.querySelectorAll("input[type=checkbox]")];
+            const checkedCount = allCbs.filter(x => x.checked).length;
+            if (checkedCount === allCbs.length) {
+              selectAll.checked = true;
+              selectAll.indeterminate = false;
+            } else if (checkedCount === 0) {
+              selectAll.checked = false;
+              selectAll.indeterminate = false;
+            } else {
+              selectAll.checked = false;
+              selectAll.indeterminate = true;
+            }
+          }
+          updateSelectAll();
+
+          // 全选 → 子项联动
+          selectAll.addEventListener("change", () => {
+            const checked = selectAll.checked;
+            optionsContainer.querySelectorAll("input[type=checkbox]").forEach(cb => cb.checked = checked);
+            updateSelectAll();
+          });
+
+          // 子项 → 全选联动
+          optionsContainer.querySelectorAll("input[type=checkbox]").forEach(cb => {
+            cb.addEventListener("change", updateSelectAll);
+          });
+
+          // 应用
+          const btnApply = document.createElement("button");
+          btnApply.textContent = "应用";
+          btnApply.className = "bg-blue-500 text-white text-xs px-2 py-1 rounded mr-2";
+          btnApply.addEventListener("click", () => {
+            const selected = [...optionsContainer.querySelectorAll("input:checked")].map(c => c.value);
+            activeFilters[col] = selected.length === values.length ? [] : selected;
+            closeFilterMenu();
+            applyFilters();
+          });
+
+          // 清除
+          const btnClear = document.createElement("button");
+          btnClear.textContent = "清除";
+          btnClear.className = "bg-gray-300 text-xs px-2 py-1 rounded";
+          btnClear.addEventListener("click", () => {
+            activeFilters[col] = [];
+            closeFilterMenu();
+            applyFilters();
+          });
+
+          const btnRow = document.createElement("div");
+          btnRow.className = "mt-2 flex justify-end space-x-2";
+          btnRow.appendChild(btnApply);
+          btnRow.appendChild(btnClear);
+          menu.appendChild(btnRow);
+
+          document.body.appendChild(menu);
+
+        }
+
+        function closeFilterMenu() {
+          document.querySelectorAll(".z-50").forEach(el => el.remove());
+        }
+
+        // === 应用过滤 ===
+        function applyFilters() {
+          const filteredData = data.filter(row => {
+            return Object.entries(activeFilters).every(([col, selected]) => {
+              if (!selected || selected.length === 0) return true;
+              if (!row[col]) return false;
+              if (["Human Roles", "AI Roles", "Human modality", "AI modality"].includes(col)) {
+                const vals = row[col].split(/[, ]+/);
+                return vals.some(v => selected.includes(v));
+              }
+              return selected.includes(row[col]);
+            });
+          });
+          renderTableBody(filteredData);
+        }
+
+        renderTableBody(data);
+      }
+    });
+  </script>
+</body>
+
+</html>

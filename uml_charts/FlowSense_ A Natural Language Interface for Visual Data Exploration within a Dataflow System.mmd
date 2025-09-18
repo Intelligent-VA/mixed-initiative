@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Issue [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Show [parse]
+    alt Ambiguity
+        A ->> H: Suggest [options]
+        H ->> A: Confirm [choice]
+    end
+
+    note over H,A: Visualization
+    A ->> A: Update [diagram]
+    A ->> H: Render [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Adjust [command]
+        A ->> H: Revise [diagram]
+    end

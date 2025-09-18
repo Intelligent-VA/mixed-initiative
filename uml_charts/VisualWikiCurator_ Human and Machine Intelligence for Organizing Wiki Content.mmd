@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [content]
+    A ->> H: Extract [metadata]
+
+    note over H,A: Visualization
+    A ->> H: Update [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Correct [entity]
+    end
+    opt Reorganization
+        H ->> A: Reorganize [section]
+    end
+    A ->> H: Preview [page]
+    H ->> A: Commit [changes]

@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Generate [story]
+
+    note over H,A: Insight Synthesis
+    opt Clarify
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Refine [story]
+    end
+    opt Repeat
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Update [story]
+    end

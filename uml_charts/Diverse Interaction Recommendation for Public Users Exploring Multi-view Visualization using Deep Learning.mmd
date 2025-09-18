@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Perform [interaction]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [action]
+
+    note over H,A: Visualization
+    alt Accept
+        H ->> A: Execute [interaction]
+    else Ignore
+        H ->> A: Perform [interaction]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Adapt [model]

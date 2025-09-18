@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [analysis task]
+
+    note over H,A: Data Preparation
+    alt Conversational
+        A ->> H: Provide [full solution]
+        H ->> A: Send [follow-up prompts]
+    else Stepwise
+        A ->> H: Present [editable assumptions + code per step]
+        H ->> A: Modify [assumptions or code]
+        A ->> H: Generate [next step output]
+    else Phasewise
+        A ->> H: Present [assumptions, execution plan, code]
+        H ->> A: Edit [any phase]
+        A ->> H: Update [solution accordingly]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> A: Verify [results, correctness]

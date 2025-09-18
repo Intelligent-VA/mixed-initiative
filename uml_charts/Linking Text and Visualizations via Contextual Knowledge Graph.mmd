@@ -1,0 +1,26 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [chart]
+    H ->> A: Provide [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [graph]
+    A ->> H: Extract [mentions]
+    opt Revise
+        H ->> A: Correct [mentions]
+        A ->> H: Update [mapping]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Group [references]
+    opt Regroup
+        H ->> A: Adjust [references]
+        A ->> H: Remap [entities]
+    end
+    A ->> H: Apply [styles]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Refine [links]

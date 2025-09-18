@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Direct manipulation
+        H ->> A: Manipulate [view]
+    and Natural language
+        H ->> A: Speak [command]
+    end
+
+    note over H,A: Data Preparation
+    A ->> H: Interpret [input]
+
+    note over H,A: Visualization
+    A ->> H: Update [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Customize
+        H ->> A: Reorganize [marks]
+        A ->> H: Reflect [layout]
+    end

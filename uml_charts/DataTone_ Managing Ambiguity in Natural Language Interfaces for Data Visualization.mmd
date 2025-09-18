@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: goal setting
+    H ->> A: Ask [query]
+
+    note over H,A: visualization
+    A ->> A: Parse [spec]
+    A ->> A: Generate [visualization]
+    A ->> H: Present [widget]
+
+    opt Ambiguity
+        note over H,A: insight synthesis
+        H ->> A: Correct [constraint]
+        A ->> A: Update [model]
+    end
+
+    H ->> A: Refine [query]
+    A ->> H: Return [visualization]

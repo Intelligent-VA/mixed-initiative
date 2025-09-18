@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Select [variables]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [views]
+    H ->> A: Browse [gallery]
+
+    note over H,A: Insight Synthesis
+    alt Targeted
+        H ->> A: Refine [encoding]
+        A ->> H: Update [chart]
+    else Broad
+        H ->> A: Explore [suggestions]
+        A ->> H: Expand [coverage]
+    end

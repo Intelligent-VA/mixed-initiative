@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Propose [complex query]
+
+    note over H,A: Data Preparation
+    A ->> H: Present [analysis plan]
+    H ->> A: Confirm or Edit [plan]
+
+    note over H,A: Visualization
+    A ->> H: Generate [code, narrative, visualizations]
+
+    note over H,A: Insight Synthesis
+    opt Multi-agent mode
+        A ->> A: Collaborate [agents]
+        A ->> H: Deliver [refined actionable insight]
+    end
+    H ->> A: Provide [clarifications or corrections]
+    A ->> H: Update [story, analysis outputs]
+    H ->> H: Interpret [actionable insights]

@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    H ->> A: Input [chart]
+    A ->> A: Analyze [trend]
+    A ->> A: Collaborate [agents]
+    A ->> A: Validate [consistency]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Generate [summary]
+    opt Verify
+        H ->> A: Identify [error]
+        A ->> H: Correct [summary]
+    end

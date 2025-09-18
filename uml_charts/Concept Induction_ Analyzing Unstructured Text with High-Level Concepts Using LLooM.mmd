@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]  
+    A ->> A: Generate [concept]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [concept]  
+    opt Steering
+        H ->> A: Refine [concept]  
+        A ->> H: Update [concept]  
+    end
+    H ->> A: Apply [criteria]  
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concept]

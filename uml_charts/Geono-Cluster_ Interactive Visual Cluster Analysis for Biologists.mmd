@@ -1,0 +1,27 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Show [layout]
+    H ->> A: Demonstrate [action]
+    A ->> H: Recommend [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [option]
+    A ->> H: Update [view]
+    opt Exploration
+        H ->> A: Adjust [features]
+        A ->> H: Revise [recommendation]
+    end
+    opt Subcluster
+        H ->> A: Request [subcluster]
+        A ->> H: Generate [panel]
+    end
+    opt MergeSplit
+        H ->> A: Drag [cluster]
+        A ->> H: Recompute [layout]
+    end

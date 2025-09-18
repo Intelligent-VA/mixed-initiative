@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Upload [document]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Generate [summary]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concepts]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [concepts]
+    A ->> H: Update [summary]
+    opt Edit
+        H ->> A: Revise [sentence]
+        A ->> H: Paraphrase [option]
+    end

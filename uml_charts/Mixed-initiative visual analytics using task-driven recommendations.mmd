@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Interact [workspace]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Infer [task model]
+    A ->> H: Recommend [data, relationships, explanations]
+
+    alt Decision
+        H ->> H: Integrate [recommendation into analysis]
+    else Ignore
+        H ->> A: Refine [workspace organization]
+    end
+    A ->> H: Provide [new recommendations]

@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Initialize [seed]  
+    A ->> A: Build [model]  
+
+    note over H,A: Visualization
+    A ->> H: Display [tree]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Request [feedback]  
+    alt Quality drop
+        A ->> H: Propose [option]  
+        H ->> A: Select [option]  
+        A ->> H: Preview [effect]  
+    end
+    H ->> A: Confirm [update]  
+    A ->> H: Improve [model]

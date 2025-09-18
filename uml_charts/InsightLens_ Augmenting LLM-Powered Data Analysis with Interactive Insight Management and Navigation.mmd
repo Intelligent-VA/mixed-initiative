@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ask [query]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Produce [insight]  
+    A ->> H: Present [insight]  
+    A ->> H: Record [insight]  
+    A ->> H: Organize [context]  
+
+    opt Navigation
+        H ->> A: Select [insight]  
+        A ->> H: Display [detail]  
+    end

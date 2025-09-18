@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Input [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [embedding]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [papers]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Filter [results]
+    H ->> A: Save [papers]
+    A ->> H: Export [collection]

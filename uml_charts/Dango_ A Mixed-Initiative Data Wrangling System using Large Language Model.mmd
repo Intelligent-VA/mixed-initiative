@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [actions]
+    H ->> A: Describe [intent in NL]
+
+    note over H,A: Data Preparation
+    alt Ambiguity Detected
+        A ->> H: Ask [clarification questions]
+        H ->> A: Answer [choices]
+    end
+    A ->> A: Synthesize [wrangling script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [step-by-step in NL]
+    opt Error Detected
+        H ->> A: Edit [NL explanation]
+        A ->> A: Update [script]
+    end
+    H ->> H: Validate [results]

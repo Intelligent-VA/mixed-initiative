@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Predict [future]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [scenario]
+    A ->> H: Update [prediction]
+    par Alternatives
+        H ->> A: Change [assumption]
+        A ->> H: Show [prediction]
+    end

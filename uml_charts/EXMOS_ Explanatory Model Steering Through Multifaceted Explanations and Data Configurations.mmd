@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    A ->> H: Provide [explanation]
+
+    note over H,A: Data Preparation
+    alt Manual
+        H ->> A: Configure [data]
+    else Automated
+        A ->> H: Suggest [issue]
+        H ->> A: Approve [fix]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Update [explanation]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Retrain [model]
+    H ->> A: Steer [model]

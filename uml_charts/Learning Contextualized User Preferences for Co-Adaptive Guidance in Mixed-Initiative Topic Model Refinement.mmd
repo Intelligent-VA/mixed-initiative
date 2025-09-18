@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Suggest [refinement operation, preview, justification]
+
+    note over H,A: Insight Synthesis
+    alt Accept suggestion
+        H ->> A: Provide [positive feedback]
+        A ->> A: Learn [preference rule]
+    else Reject suggestion
+        H ->> A: Provide [negative feedback]
+        A ->> A: Adjust [when to guide]
+    end
+    H ->> H: Update [topic model understanding]

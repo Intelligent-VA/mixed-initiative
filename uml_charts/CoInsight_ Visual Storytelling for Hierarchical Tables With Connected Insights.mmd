@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [table]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Extract [insight]
+    A ->> H: Construct [graph]
+    H ->> A: Explore [relations]
+    A ->> H: Recommend [story]
+    opt Refine
+        H ->> A: Adjust [narrative]
+        A ->> H: Update [story]
+    end

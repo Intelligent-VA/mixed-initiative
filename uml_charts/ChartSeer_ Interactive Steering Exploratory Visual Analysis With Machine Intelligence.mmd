@@ -1,0 +1,18 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Create [chart]
+
+    note over H,A: Visualization
+    A ->> H: Summarize [state]
+    A ->> H: Recommend [chart]
+
+    alt Accept
+        H ->> A: Select [recommendation]
+        A ->> H: Generate [chart]
+    else Reject
+        H ->> A: Specify [goal]
+        A ->> H: Suggest [alternative]
+    end

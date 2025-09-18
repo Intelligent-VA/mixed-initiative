@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Define [domain]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [bias]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [overview]
+    H ->> A: Inspect [bias]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Highlight [context]
+    opt Debugging
+        H ->> A: Modify [lens]
+        A ->> H: Recompute [bias]
+    end

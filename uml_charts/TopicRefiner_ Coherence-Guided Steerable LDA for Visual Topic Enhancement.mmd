@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [topics]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [output]
+
+    note over H,A: Visualization
+    H ->> A: Refine [term]
+    A ->> H: Recommend [term]
+    H ->> A: Edit [document]
+    A ->> H: Update [coherence]
+
+    note over H,A: Insight Synthesis
+    opt TopicOps
+        H ->> A: Merge [topic]
+        H ->> A: Split [topic]
+        A ->> H: Adjust [result]
+    end

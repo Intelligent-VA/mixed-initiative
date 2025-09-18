@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [goal]
+
+    note over H,A: Data Preparation
+    A ->> H: Run [task]
+    A ->> H: Rank [table]
+    H ->> A: Select [task]
+
+    note over H,A: Visualization
+    A ->> H: Show [vis]
+
+    note over H,A: Insight Synthesis
+    alt Expand clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Accept [goal]
+    else Extra clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Reject [goal]
+    end

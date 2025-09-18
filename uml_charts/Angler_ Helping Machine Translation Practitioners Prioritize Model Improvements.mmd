@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Identify [issue]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [set]
+    H ->> A: Curate [set]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [metrics]
+
+    note over H,A: Insight Synthesis
+    alt Analyze
+        H ->> A: Inspect [samples]
+        A ->> H: Update [signals]
+    else Compare
+        H ->> A: Select [sets]
+        A ->> H: Display [results]
+    end
+    H ->> A: Decide [priority]
+    A ->> H: Recommend [action]

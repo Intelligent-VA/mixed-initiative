@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Conversation
+        H ->> H: Discuss [data exploration ideas]
+        A ->> A: Continuously listen [context]
+    end
+
+    note over H,A: Visualization
+    opt Detect [opportunity]
+        A ->> H: Generate [relevant visualization proactively]
+    end
+    H ->> A: Request [new or modified visualization]
+    A ->> H: Respond [visualization]
+
+    note over H,A: Insight Synthesis
+    H ->> H: Interpret [charts]

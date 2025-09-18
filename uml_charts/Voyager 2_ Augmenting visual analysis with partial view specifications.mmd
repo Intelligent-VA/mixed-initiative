@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [partial-spec]
+
+    note over H,A: Visualization
+    A ->> H: Generate [wildcards]
+    A ->> H: Recommend [views]
+
+    note over H,A: Insight Synthesis
+    alt Focused
+        H ->> A: Refine [chart]
+        A ->> H: Update [view]
+    else Exploratory
+        H ->> A: Browse [related]
+        A ->> H: Suggest [alternatives]
+    end

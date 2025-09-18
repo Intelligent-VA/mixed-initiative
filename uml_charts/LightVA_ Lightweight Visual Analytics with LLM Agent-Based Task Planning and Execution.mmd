@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Decompose [task]
+
+    note over H,A: Visualization
+    A ->> A: Execute [visualization & analysis]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [insights]
+    alt Task too complex
+        A ->> A: Recursive [plan & execute]
+    end
+    H ->> H: Inspect [results]
+    H ->> A: Refine [task or goal]

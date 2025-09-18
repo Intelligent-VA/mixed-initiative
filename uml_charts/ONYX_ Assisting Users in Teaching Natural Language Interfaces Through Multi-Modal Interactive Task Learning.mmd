@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [action]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [option]
+    alt Ambiguity
+        A ->> H: Ask [question]
+        H ->> A: Clarify [input]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Guide [aid]
+    H ->> A: Edit [script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Update [output]

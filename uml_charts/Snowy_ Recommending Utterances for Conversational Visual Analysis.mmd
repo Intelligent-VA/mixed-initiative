@@ -1,0 +1,23 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ask [utterance]
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Cold start
+        A ->> H: Suggest [utterance]
+    end
+    opt Follow-up
+        A ->> H: Suggest [utterance]
+        H ->> A: Select [utterance]
+        A ->> H: Update [visualization]
+    end
+    opt Deictic
+        H ->> A: Select [marks]
+        A ->> H: Suggest [utterance]
+    end

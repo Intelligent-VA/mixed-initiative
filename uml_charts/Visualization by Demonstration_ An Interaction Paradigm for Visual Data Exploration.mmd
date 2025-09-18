@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [demonstration]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [transformation]
+
+    note over H,A: Insight Synthesis
+    opt Refine
+        H ->> A: Modify [demonstration]
+        A ->> H: Update [recommendation]
+    end
+    H ->> A: Select [visualization]

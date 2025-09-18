@@ -1,0 +1,16 @@
+sequenceDiagram
+participant H as Human
+participant A as AI
+
+note over H,A: Data Preparation
+H ->> A: Create [chart] 
+H ->> A: Sketch [intent] 
+A ->> A: Detect [region] 
+A ->> A: Infer [fact] 
+
+note over H,A: Insight Synthesis
+A ->> H: Generate [text] 
+opt Refinement
+H ->> A: Edit [text] 
+A ->> H: Update [text] 
+end

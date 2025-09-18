@@ -1,0 +1,17 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [intent]  
+
+    note over H,A: Insight Synthesis
+    A ->> A: Recommend [collection]  
+    A ->> H: Present [option]  
+    opt Manual
+        H ->> A: Select [view]  
+    end
+
+    note over H,A: Visualization
+    H ->> A: Configure [widget]  
+    A ->> H: Update [dashboard]

@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Draft [text]
+    A ->> H: Suggest [completion]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [region]
+    A ->> H: Generate [sentence]
+
+    note over H,A: Visualization
+    H ->> A: Write [description]
+    A ->> H: Suggest [annotation]
+
+    note over H,A: Insight Synthesis
+    alt Text-driven
+        H ->> A: Provide [instruction]
+        A ->> H: Adjust [chart]
+    else Chart-driven
+        H ->> A: Modify [chart]
+        A ->> H: Suggest [text]
+    end

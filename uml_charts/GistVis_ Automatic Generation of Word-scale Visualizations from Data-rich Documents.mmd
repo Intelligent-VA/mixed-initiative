@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [document]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Discover [insight]
+    A ->> A: Annotate [context]
+    A ->> A: Extract [fact]
+
+    note over H,A: Visualization
+    A ->> A: Visualize [snippet]
+    A ->> H: Embed [visualization]
+    opt Interaction
+        H ->> A: Hover [entity]
+        A ->> H: Show [tooltip]
+    end

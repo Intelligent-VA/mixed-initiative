@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [dataset]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [facts]
+    H ->> A: Select [keyframes]
+    A ->> H: Interpolate [candidates]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Edit [facts]
+    A ->> H: Update [story]
+    opt Refinement
+        H ->> A: Adjust [keyframe]
+        A ->> H: Revise [candidates]
+    end
+    A ->> H: Render [story]

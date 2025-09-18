@@ -1,0 +1,24 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Generate [bundles]
+    H ->> A: Explore [view]
+    A ->> H: Show [feedback]
+
+    note over H,A: Insight Synthesis
+    opt Structural
+        H ->> A: Modify [bundle]
+        A ->> H: Update [layout]
+    end
+    opt View
+        H ->> A: Drilldown [axis]
+        A ->> H: Display [detail]
+    end
+    opt Missingness
+        A ->> H: Encode [glyphs]
+        H ->> A: Filter [subset]
+    end
+    H ->> A: Form [hypothesis]
+    A ->> H: Support [evidence]

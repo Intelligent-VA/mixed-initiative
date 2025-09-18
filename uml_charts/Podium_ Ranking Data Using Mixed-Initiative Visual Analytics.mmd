@@ -1,0 +1,19 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Rank [subset]
+
+    note over H,A: Data Preparation
+    A ->> H: Infer [weights]
+
+    note over H,A: Visualization
+    A ->> H: Generate [ranking]
+
+    note over H,A: Insight Synthesis
+    opt Preference Adjustment
+        H ->> A: Adjust [preference]
+        A ->> H: Update [model]
+    end
+    H ->> A: Interpret [attributes]

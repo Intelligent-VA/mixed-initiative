@@ -1,0 +1,21 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [insight]
+    A ->> H: Recommend [sequence]
+
+    note over H,A: Visualization
+    H ->> A: View [chart]
+
+    note over H,A: Insight Synthesis
+    alt Modify
+        H ->> A: Edit [step]
+        A ->> H: Update [sequence]
+    else Accept
+        H ->> A: Continue [exploration]
+    end

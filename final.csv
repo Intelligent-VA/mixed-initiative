@@ -1,0 +1,4122 @@
+ID,Paper,Year,Publisher,Link,UML,UML_Image,Stage,Human Roles,AI Roles,Controls,Human modality,AI modality,Efficiency,Reliability,Interuption,Persistence,Expressive,Interpretability,Target user,Explanation
+1,VisualWikiCurator: Human and Machine Intelligence for Organizing Wiki Content,2011,IUI,http://www.kongn.org/files/visualwikicurator.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [content]
+    A ->> H: Extract [metadata]
+
+    note over H,A: Visualization
+    A ->> H: Update [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Correct [entity]
+    end
+    opt Reorganization
+        H ->> A: Reorganize [section]
+    end
+    A ->> H: Preview [page]
+    H ->> A: Commit [changes]",,Data Preparation,,"Interpreter, Recommender",Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,general user,The system recommends content and extracts metadata.
+1,VisualWikiCurator: Human and Machine Intelligence for Organizing Wiki Content,2011,IUI,http://www.kongn.org/files/visualwikicurator.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [content]
+    A ->> H: Extract [metadata]
+
+    note over H,A: Visualization
+    A ->> H: Update [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Correct [entity]
+    end
+    opt Reorganization
+        H ->> A: Reorganize [section]
+    end
+    A ->> H: Preview [page]
+    H ->> A: Commit [changes]",,Visualization,,Updater,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,general user,The system presents a visualization view to organize wiki content.
+1,VisualWikiCurator: Human and Machine Intelligence for Organizing Wiki Content,2011,IUI,http://www.kongn.org/files/visualwikicurator.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [content]
+    A ->> H: Extract [metadata]
+
+    note over H,A: Visualization
+    A ->> H: Update [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Correct [entity]
+    end
+    opt Reorganization
+        H ->> A: Reorganize [section]
+    end
+    A ->> H: Preview [page]
+    H ->> A: Commit [changes]",,Insight Synthesis,"Producer, Refiner, Selector",Evaluator,Repetitive,Text,Vis Widget,Medium,High,Medium,Continuous,High,High,general user,"The user corrects or restructures, and the system previews the updated page."
+2,DataDive – Supporting Readers’ Contextualization of Statistical Statements with Data Exploration,2014,IUI,https://dl.acm.org/doi/pdf/10.1145/3640543.3645155,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [statement]
+
+    note over H,A: Data Preparation
+    A ->> A: Generate [recommendation]
+
+    note over H,A: Visualization
+    A ->> H: Present [options]
+    H ->> A: Choose [context]
+    A ->> A: Match [data]
+    A ->> H: Visualize [context]",,Goal Setting,Selector,,Sequential,Text Sketch,,Medium,Medium,Low,One-shot,High,Low,novice/general,The user selects an interesting statistical statement.
+2,DataDive – Supporting Readers’ Contextualization of Statistical Statements with Data Exploration,2014,IUI,https://dl.acm.org/doi/pdf/10.1145/3640543.3645155,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [statement]
+
+    note over H,A: Data Preparation
+    A ->> A: Generate [recommendation]
+
+    note over H,A: Visualization
+    A ->> H: Present [options]
+    H ->> A: Choose [context]
+    A ->> A: Match [data]
+    A ->> H: Visualize [context]",,Data Preparation,,Analyzer,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,novice/general,The system generates contextual candidate questions.
+2,DataDive – Supporting Readers’ Contextualization of Statistical Statements with Data Exploration,2014,IUI,https://dl.acm.org/doi/pdf/10.1145/3640543.3645155,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [statement]
+
+    note over H,A: Data Preparation
+    A ->> A: Generate [recommendation]
+
+    note over H,A: Visualization
+    A ->> H: Present [options]
+    H ->> A: Choose [context]
+    A ->> A: Match [data]
+    A ->> H: Visualize [context]",,Visualization,,"Generator, Presenter",Decision,Vis,Vis Text,Medium,Medium,High,One-shot,Low,High,novice/general,"The system visualizes contextual data, and the user selects and compares."
+3,DataTone: Managing Ambiguity in Natural Language Interfaces for Data Visualization,2015,UIST,https://dl.acm.org/doi/pdf/10.1145/2807442.2807478,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: goal setting
+    H ->> A: Ask [query]
+
+    note over H,A: visualization
+    A ->> A: Parse [spec]
+    A ->> A: Generate [visualization]
+    A ->> H: Present [widget]
+
+    opt Ambiguity
+        note over H,A: insight synthesis
+        H ->> A: Correct [constraint]
+        A ->> A: Update [model]
+    end
+
+    H ->> A: Refine [query]
+    A ->> H: Return [visualization]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,novice/general,"The user issues a query in natural language, text as the main modality."
+3,DataTone: Managing Ambiguity in Natural Language Interfaces for Data Visualization,2015,UIST,https://dl.acm.org/doi/pdf/10.1145/2807442.2807478,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: goal setting
+    H ->> A: Ask [query]
+
+    note over H,A: visualization
+    A ->> A: Parse [spec]
+    A ->> A: Generate [visualization]
+    A ->> H: Present [widget]
+
+    opt Ambiguity
+        note over H,A: insight synthesis
+        H ->> A: Correct [constraint]
+        A ->> A: Update [model]
+    end
+
+    H ->> A: Refine [query]
+    A ->> H: Return [visualization]",,Visualization,,"Generator, Presenter",Sequential,,Vis Widget,Medium,Medium,Low,One-shot,Low,High,novice/general,The AI generates a visualization and exposes ambiguity with GUI widgets.
+3,DataTone: Managing Ambiguity in Natural Language Interfaces for Data Visualization,2015,UIST,https://dl.acm.org/doi/pdf/10.1145/2807442.2807478,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: goal setting
+    H ->> A: Ask [query]
+
+    note over H,A: visualization
+    A ->> A: Parse [spec]
+    A ->> A: Generate [visualization]
+    A ->> H: Present [widget]
+
+    opt Ambiguity
+        note over H,A: insight synthesis
+        H ->> A: Correct [constraint]
+        A ->> A: Update [model]
+    end
+
+    H ->> A: Refine [query]
+    A ->> H: Return [visualization]",,Insight Synthesis,Refiner,Refiner,Repetitive,Text Widget,Vis ,Medium,High,Medium,Continuous,High,High,novice/general,"The user corrects constraints through widgets, combining text and interface."
+4,Mixed-initiative visual analytics using task-driven recommendations,2015,TVCG,https://faculty.cc.gatech.edu/~aendert3/resources/cook-vast-2015.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Interact [workspace]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Infer [task model]
+    A ->> H: Recommend [data, relationships, explanations]
+
+    alt Decision
+        H ->> H: Integrate [recommendation into analysis]
+    else Ignore
+        H ->> A: Refine [workspace organization]
+    end
+    A ->> H: Provide [new recommendations]",,Goal Setting,Demonstrator,,Sequential,Widget,,Medium,Medium,Low,One-shot,High,Low,general user,The user inputs seeds in a spatial workspace.
+4,Mixed-initiative visual analytics using task-driven recommendations,2015,TVCG,https://faculty.cc.gatech.edu/~aendert3/resources/cook-vast-2015.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Interact [workspace]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Infer [task model]
+    A ->> H: Recommend [data, relationships, explanations]
+
+    alt Decision
+        H ->> H: Integrate [recommendation into analysis]
+    else Ignore
+        H ->> A: Refine [workspace organization]
+    end
+    A ->> H: Provide [new recommendations]",,Insight Synthesis,"Refiner, Selector","Recommender, Selector",Decision,,Text Vis,Medium,High,High,One-shot,High,High,general user,"The AI infers task models and recommends data and relations, the user integrates or ignores."
+5,TimeFork: Interactive Prediction of Time Series,2016,TVCG,https://users.umiacs.umd.edu/~elm/projects/timefork/timefork.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Predict [future]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [scenario]
+    A ->> H: Update [prediction]
+    par Alternatives
+        H ->> A: Change [assumption]
+        A ->> H: Show [prediction]
+    end",,Data Preparation,Executor,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,The user provides time series data.
+5,TimeFork: Interactive Prediction of Time Series,2016,TVCG,https://users.umiacs.umd.edu/~elm/projects/timefork/timefork.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Predict [future]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [scenario]
+    A ->> H: Update [prediction]
+    par Alternatives
+        H ->> A: Change [assumption]
+        A ->> H: Show [prediction]
+    end",,Visualization,,,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The system predicts the future and displays charts.
+5,TimeFork: Interactive Prediction of Time Series,2016,TVCG,https://users.umiacs.umd.edu/~elm/projects/timefork/timefork.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Predict [future]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [scenario]
+    A ->> H: Update [prediction]
+    par Alternatives
+        H ->> A: Change [assumption]
+        A ->> H: Show [prediction]
+    end",,Insight Synthesis,"Refiner, Selector",Refiner,Parallel,Vis,,Medium,High,Low,Continuous,High,High,domain expert,"The user selects scenarios or modifies assumptions, the system updates predictions."
+6,Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations,2016,CHI,https://doi.org/10.1109/TVCG.2015.2467191,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Select [variables]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [views]
+    H ->> A: Browse [gallery]
+
+    note over H,A: Insight Synthesis
+    alt Targeted
+        H ->> A: Refine [encoding]
+        A ->> H: Update [chart]
+    else Broad
+        H ->> A: Explore [suggestions]
+        A ->> H: Expand [coverage]
+    end",,Data Preparation,"Evaluator, Refiner",Refiner,Sequential,Widget Text,,High,Medium,Low,One-shot,Medium,Medium,general user,The user selects data variables.
+6,Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations,2016,CHI,https://doi.org/10.1109/TVCG.2015.2467191,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Select [variables]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [views]
+    H ->> A: Browse [gallery]
+
+    note over H,A: Insight Synthesis
+    alt Targeted
+        H ->> A: Refine [encoding]
+        A ->> H: Update [chart]
+    else Broad
+        H ->> A: Explore [suggestions]
+        A ->> H: Expand [coverage]
+    end",,Visualization,Specifier,,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,general user,"The AI recommends candidate views, presenting a gallery of charts."
+6,Voyager: Exploratory Analysis via Faceted Browsing of Visualization Recommendations,2016,CHI,https://doi.org/10.1109/TVCG.2015.2467191,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Select [variables]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [views]
+    H ->> A: Browse [gallery]
+
+    note over H,A: Insight Synthesis
+    alt Targeted
+        H ->> A: Refine [encoding]
+        A ->> H: Update [chart]
+    else Broad
+        H ->> A: Explore [suggestions]
+        A ->> H: Expand [coverage]
+    end",,Insight Synthesis,,"Analyzer, Recommender",Decision,Vis,,Medium,High,High,One-shot,High,High,general user,"The user refines encodings or browses suggestions, the system updates or extends chart coverage."
+7,Visualization by Demonstration: An Interaction Paradigm for Visual Data Exploration,2016,TVCG,https://doi.org/10.1109/TVCG.2016.2598839,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [demonstration]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [transformation]
+
+    note over H,A: Insight Synthesis
+    opt Refine
+        H ->> A: Modify [demonstration]
+        A ->> H: Update [recommendation]
+    end
+    H ->> A: Select [visualization]",,Goal Setting,Specifier,,Sequential,Sketch Vis,,Medium,Medium,Low,One-shot,High,Low,general user,The user modifies a visualization directly through demonstration.
+7,Visualization by Demonstration: An Interaction Paradigm for Visual Data Exploration,2016,TVCG,https://doi.org/10.1109/TVCG.2016.2598839,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [demonstration]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [transformation]
+
+    note over H,A: Insight Synthesis
+    opt Refine
+        H ->> A: Modify [demonstration]
+        A ->> H: Update [recommendation]
+    end
+    H ->> A: Select [visualization]",,Visualization,,Recommender,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,general user,The system recommends transformations based on demonstrations.
+7,Visualization by Demonstration: An Interaction Paradigm for Visual Data Exploration,2016,TVCG,https://doi.org/10.1109/TVCG.2016.2598839,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [demonstration]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [transformation]
+
+    note over H,A: Insight Synthesis
+    opt Refine
+        H ->> A: Modify [demonstration]
+        A ->> H: Update [recommendation]
+    end
+    H ->> A: Select [visualization]",,Insight Synthesis,"Refiner, Selector",Refiner,Repetitive,Vis,,Medium,High,Medium,Continuous,High,High,general user,"The user refines demonstrations, the system updates recommendations, and selects the final visualization."
+8,Voyager 2: Augmenting visual analysis with partial view specifications,2017,TVCG,https://idl.cs.washington.edu/files/2017-Voyager2-CHI.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [partial-spec]
+
+    note over H,A: Visualization
+    A ->> H: Generate [wildcards]
+    A ->> H: Recommend [views]
+
+    note over H,A: Insight Synthesis
+    alt Focused
+        H ->> A: Refine [chart]
+        A ->> H: Update [view]
+    else Exploratory
+        H ->> A: Browse [related]
+        A ->> H: Suggest [alternatives]
+    end",,Data Preparation,Selector,,Sequential,Text Vis Widget,,High,Medium,Low,One-shot,Medium,Medium,general user,The user provides partial chart specifications.
+8,Voyager 2: Augmenting visual analysis with partial view specifications,2017,TVCG,https://idl.cs.washington.edu/files/2017-Voyager2-CHI.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [partial-spec]
+
+    note over H,A: Visualization
+    A ->> H: Generate [wildcards]
+    A ->> H: Recommend [views]
+
+    note over H,A: Insight Synthesis
+    alt Focused
+        H ->> A: Refine [chart]
+        A ->> H: Update [view]
+    else Exploratory
+        H ->> A: Browse [related]
+        A ->> H: Suggest [alternatives]
+    end",,Visualization,,Analyzer,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,general user,The system generates wildcard charts and recommends related views.
+8,Voyager 2: Augmenting visual analysis with partial view specifications,2017,TVCG,https://idl.cs.washington.edu/files/2017-Voyager2-CHI.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [partial-spec]
+
+    note over H,A: Visualization
+    A ->> H: Generate [wildcards]
+    A ->> H: Recommend [views]
+
+    note over H,A: Insight Synthesis
+    alt Focused
+        H ->> A: Refine [chart]
+        A ->> H: Update [view]
+    else Exploratory
+        H ->> A: Browse [related]
+        A ->> H: Suggest [alternatives]
+    end",,Insight Synthesis,,Generator,Decision,Vis,,Medium,High,High,One-shot,High,High,general user,"The user refines or browses related charts, the system updates recommendations."
+9,The Exploratory Labeling Assistant: Mixed-Initiative Label Curation with Large Document Collections,2018,CHI,https://doi.org/10.1145/3242587.3242596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ideate [label]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [term]
+    H ->> A: Specify [rule]
+
+    note over H,A: Visualization
+    A ->> H: Match [documents]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Evaluate [labels]
+    A ->> H: Recommend [refinement]",,Goal Setting,Recommender,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user proposes initial labeling ideas.
+9,The Exploratory Labeling Assistant: Mixed-Initiative Label Curation with Large Document Collections,2018,CHI,https://doi.org/10.1145/3242587.3242596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ideate [label]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [term]
+    H ->> A: Specify [rule]
+
+    note over H,A: Visualization
+    A ->> H: Match [documents]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Evaluate [labels]
+    A ->> H: Recommend [refinement]",,Data Preparation,Transformer,Recommender,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,"The system suggests terminology, the user defines rules."
+9,The Exploratory Labeling Assistant: Mixed-Initiative Label Curation with Large Document Collections,2018,CHI,https://doi.org/10.1145/3242587.3242596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ideate [label]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [term]
+    H ->> A: Specify [rule]
+
+    note over H,A: Visualization
+    A ->> H: Match [documents]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Evaluate [labels]
+    A ->> H: Recommend [refinement]",,Visualization,,,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The system matches documents to labels and visualizes coverage.
+9,The Exploratory Labeling Assistant: Mixed-Initiative Label Curation with Large Document Collections,2018,CHI,https://doi.org/10.1145/3242587.3242596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ideate [label]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [term]
+    H ->> A: Specify [rule]
+
+    note over H,A: Visualization
+    A ->> H: Match [documents]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Evaluate [labels]
+    A ->> H: Recommend [refinement]",,Insight Synthesis,Evaluator,Recommender,Sequential,Text,Vis,Medium,High,Low,One-shot,High,High,domain expert,"The user evaluates labels, the system recommends further refinement."
+10,Podium: Ranking Data Using Mixed-Initiative Visual Analytics,2018,UIST,https://cav-lab.github.io/media/papers/PodiumVAST17.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Rank [subset]
+
+    note over H,A: Data Preparation
+    A ->> H: Infer [weights]
+
+    note over H,A: Visualization
+    A ->> H: Generate [ranking]
+
+    note over H,A: Insight Synthesis
+    opt Preference Adjustment
+        H ->> A: Adjust [preference]
+        A ->> H: Update [model]
+    end
+    H ->> A: Interpret [attributes]",,Goal Setting,,Generator,Sequential,Widget,,Medium,Medium,Low,One-shot,High,Low,general user,The user sorts data by dragging table rows.
+10,Podium: Ranking Data Using Mixed-Initiative Visual Analytics,2018,UIST,https://cav-lab.github.io/media/papers/PodiumVAST17.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Rank [subset]
+
+    note over H,A: Data Preparation
+    A ->> H: Infer [weights]
+
+    note over H,A: Visualization
+    A ->> H: Generate [ranking]
+
+    note over H,A: Insight Synthesis
+    opt Preference Adjustment
+        H ->> A: Adjust [preference]
+        A ->> H: Update [model]
+    end
+    H ->> A: Interpret [attributes]",,Data Preparation,Evaluator,,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,general user,The system infers a weighting model.
+10,Podium: Ranking Data Using Mixed-Initiative Visual Analytics,2018,UIST,https://cav-lab.github.io/media/papers/PodiumVAST17.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Rank [subset]
+
+    note over H,A: Data Preparation
+    A ->> H: Infer [weights]
+
+    note over H,A: Visualization
+    A ->> H: Generate [ranking]
+
+    note over H,A: Insight Synthesis
+    opt Preference Adjustment
+        H ->> A: Adjust [preference]
+        A ->> H: Update [model]
+    end
+    H ->> A: Interpret [attributes]",,Visualization,Selector,,Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,general user,The system generates a ranked table view.
+10,Podium: Ranking Data Using Mixed-Initiative Visual Analytics,2018,UIST,https://cav-lab.github.io/media/papers/PodiumVAST17.pdf,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Rank [subset]
+
+    note over H,A: Data Preparation
+    A ->> H: Infer [weights]
+
+    note over H,A: Visualization
+    A ->> H: Generate [ranking]
+
+    note over H,A: Insight Synthesis
+    opt Preference Adjustment
+        H ->> A: Adjust [preference]
+        A ->> H: Update [model]
+    end
+    H ->> A: Interpret [attributes]",,Insight Synthesis,,Interpreter,Repetitive,Vis Widget,,Medium,High,Low,One-shot,High,High,general user,"The user adjusts preferences, the system updates the model and shows attribute contributions."
+11,Managing Messes in Computational Notebooks,2019,TVCG,https://dl.acm.org/doi/10.1145/3290605.3300500,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [result]
+
+    note over H,A: Data Preparation
+    A ->> H: Slice [code]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Review [history]
+    opt Clean
+        H ->> A: Remove [cell]
+        A ->> H: Update [notebook]
+    end
+    opt Compare
+        H ->> A: Request [version]
+        A ->> H: Retrieve [slice]
+    end",,Goal Setting,Executor,,Sequential,Vis Widget,,Medium,Medium,Low,One-shot,High,Low,general user,The user selects results to keep or clean.
+11,Managing Messes in Computational Notebooks,2019,TVCG,https://dl.acm.org/doi/10.1145/3290605.3300500,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [result]
+
+    note over H,A: Data Preparation
+    A ->> H: Slice [code]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Review [history]
+    opt Clean
+        H ->> A: Remove [cell]
+        A ->> H: Update [notebook]
+    end
+    opt Compare
+        H ->> A: Request [version]
+        A ->> H: Retrieve [slice]
+    end",,Data Preparation,,"Generator, Recommender",Sequential,,Code,High,Medium,Medium,Continuous,Medium,Medium,general user,The AI segments relevant code snippets.
+11,Managing Messes in Computational Notebooks,2019,TVCG,https://dl.acm.org/doi/10.1145/3290605.3300500,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [result]
+
+    note over H,A: Data Preparation
+    A ->> H: Slice [code]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Review [history]
+    opt Clean
+        H ->> A: Remove [cell]
+        A ->> H: Update [notebook]
+    end
+    opt Compare
+        H ->> A: Request [version]
+        A ->> H: Retrieve [slice]
+    end",,Insight Synthesis,"Refiner, Selector","Recommender, Refiner",Repetitive,Text Widget,Code,Medium,High,Low,One-shot,High,High,general user,"The user reviews history, cleans cells, compares versions, and the AI updates the notebook."
+12,Visual Analytics for Topic Model Optimization based on User-Steerable Speculative Execution,2019,CHI,https://doi.org/10.1109/TVCG.2018.2864769,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Initialize [seed]  
+    A ->> A: Build [model]  
+
+    note over H,A: Visualization
+    A ->> H: Display [tree]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Request [feedback]  
+    alt Quality drop
+        A ->> H: Propose [option]  
+        H ->> A: Select [option]  
+        A ->> H: Preview [effect]  
+    end
+    H ->> A: Confirm [update]  
+    A ->> H: Improve [model]",,Data Preparation,Executor,Executor,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,"The user sets an initial seed, the AI builds a model."
+12,Visual Analytics for Topic Model Optimization based on User-Steerable Speculative Execution,2019,CHI,https://doi.org/10.1109/TVCG.2018.2864769,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Initialize [seed]  
+    A ->> A: Build [model]  
+
+    note over H,A: Visualization
+    A ->> H: Display [tree]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Request [feedback]  
+    alt Quality drop
+        A ->> H: Propose [option]  
+        H ->> A: Select [option]  
+        A ->> H: Preview [effect]  
+    end
+    H ->> A: Confirm [update]  
+    A ->> H: Improve [model]",,Visualization,,Presenter,Sequential,,Vis,Medium,Medium,High,One-shot,Low,High,domain expert,The AI presents a topic tree view.
+12,Visual Analytics for Topic Model Optimization based on User-Steerable Speculative Execution,2019,CHI,https://doi.org/10.1109/TVCG.2018.2864769,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Initialize [seed]  
+    A ->> A: Build [model]  
+
+    note over H,A: Visualization
+    A ->> H: Display [tree]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Request [feedback]  
+    alt Quality drop
+        A ->> H: Propose [option]  
+        H ->> A: Select [option]  
+        A ->> H: Preview [effect]  
+    end
+    H ->> A: Confirm [update]  
+    A ->> H: Improve [model]",,Insight Synthesis,"Evaluator, Selector","Evaluator, Recommender, Refiner",Decision,,Vis,Medium,High,Low,One-shot,High,High,domain expert,"The AI proposes optimizations, the user previews and selects, the system updates the model."
+13,Interactive Learning for Identifying Relevant Tweets to Support  Real-time Situational Awareness,2020,TVCG,http://arxiv.org/abs/1908.02588,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    A ->> H: Classify [tweet]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Verify [label]
+    opt Correction
+        H ->> A: Relabel [data]
+        A ->> H: Retrain [model]
+    end
+    A ->> H: Update [prediction]",,Data Preparation,,Analyzer,Sequential,,Text,High,Medium,Medium,Continuous,Medium,Medium,domain expert,The AI classifies tweet relevance.
+13,Interactive Learning for Identifying Relevant Tweets to Support  Real-time Situational Awareness,2020,TVCG,http://arxiv.org/abs/1908.02588,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    A ->> H: Classify [tweet]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Verify [label]
+    opt Correction
+        H ->> A: Relabel [data]
+        A ->> H: Retrain [model]
+    end
+    A ->> H: Update [prediction]",,Insight Synthesis,Evaluator,Refiner,Repetitive,Text,Vis,Medium,High,Low,One-shot,High,High,domain expert,"The user verifies or corrects labels, the system retrains the model and updates predictions."
+14,FlowSense: A Natural Language Interface for Visual Data Exploration within a Dataflow System,2020,TVCG,https://ieeexplore.ieee.org/document/8807265/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Issue [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Show [parse]
+    alt Ambiguity
+        A ->> H: Suggest [options]
+        H ->> A: Confirm [choice]
+    end
+
+    note over H,A: Visualization
+    A ->> A: Update [diagram]
+    A ->> H: Render [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Adjust [command]
+        A ->> H: Revise [diagram]
+    end",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,High,One-shot,High,Low,general user,The user describes analysis goals in natural language.
+14,FlowSense: A Natural Language Interface for Visual Data Exploration within a Dataflow System,2020,TVCG,https://ieeexplore.ieee.org/document/8807265/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Issue [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Show [parse]
+    alt Ambiguity
+        A ->> H: Suggest [options]
+        H ->> A: Confirm [choice]
+    end
+
+    note over H,A: Visualization
+    A ->> A: Update [diagram]
+    A ->> H: Render [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Adjust [command]
+        A ->> H: Revise [diagram]
+    end",,Data Preparation,Recommender,Recommender,Decision,,Text Widget,High,Medium,Low,One-shot,Medium,Medium,general user,"The AI presents parsing results, offering options for ambiguity, and the user confirms."
+14,FlowSense: A Natural Language Interface for Visual Data Exploration within a Dataflow System,2020,TVCG,https://ieeexplore.ieee.org/document/8807265/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Issue [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Show [parse]
+    alt Ambiguity
+        A ->> H: Suggest [options]
+        H ->> A: Confirm [choice]
+    end
+
+    note over H,A: Visualization
+    A ->> A: Update [diagram]
+    A ->> H: Render [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Adjust [command]
+        A ->> H: Revise [diagram]
+    end",,Visualization,,"Generator, Updater",Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,general user,The AI updates the dataflow diagram and renders views.
+14,FlowSense: A Natural Language Interface for Visual Data Exploration within a Dataflow System,2020,TVCG,https://ieeexplore.ieee.org/document/8807265/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Issue [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Show [parse]
+    alt Ambiguity
+        A ->> H: Suggest [options]
+        H ->> A: Confirm [choice]
+    end
+
+    note over H,A: Visualization
+    A ->> A: Update [diagram]
+    A ->> H: Render [view]
+
+    note over H,A: Insight Synthesis
+    opt Correction
+        H ->> A: Adjust [command]
+        A ->> H: Revise [diagram]
+    end",,Insight Synthesis,Refiner,Refiner,Repetitive,Text,Vis,Medium,High,Low,One-shot,High,High,general user,"The user corrects commands, the system updates charts, combining text instructions with visualization."
+15,Semantic Concept Spaces: Guided Topic Model Refinement using Word-Embedding Projections,2020,TVCG,https://doi.org/10.1109/TVCG.2019.2934654,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Present [concepts]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Diagnose [conflict]
+    A ->> H: Suggest [action]
+    H ->> A: Refine [relations]
+    A ->> H: Update [topics]
+    H ->> A: Adjust [concepts]
+    A ->> H: Show [results]",,Visualization,,Presenter,Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,domain expert,The system presents semantic spaces and conceptual regions.
+15,Semantic Concept Spaces: Guided Topic Model Refinement using Word-Embedding Projections,2020,TVCG,https://doi.org/10.1109/TVCG.2019.2934654,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Present [concepts]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Diagnose [conflict]
+    A ->> H: Suggest [action]
+    H ->> A: Refine [relations]
+    A ->> H: Update [topics]
+    H ->> A: Adjust [concepts]
+    A ->> H: Show [results]",,Insight Synthesis,Refiner,"Recommender, Refiner",Repetitive,Vis,Text,Medium,High,Low,One-shot,High,High,domain expert,"The user diagnoses conflicts and adjusts concept relations, the AI provides suggestions and updates the model."
+16,Towards Visual Explainable Active Learning for Zero-Shot Classification,2021,TVCG,https://arxiv.org/abs/2108.06730,"sequenceDiagram 
+   note over H,A: goal setting 
+   A ->> H: Ask [question] 
+   A ->> H: Explain [status] 
+
+   note over H,A: insight synthesis 
+   A ->> H: Recommend [labels] 
+   H ->> A: Respond [feedback] 
+   A ->> A: Update [model]",,Goal Setting,,Specifier,Sequential,Text,Text,Medium,Medium,Medium,Continuous,High,Low,domain expert,"The AI asks questions and explains system state to help set goals, using text questions and explanations."
+16,Towards Visual Explainable Active Learning for Zero-Shot Classification,2021,TVCG,https://arxiv.org/abs/2108.06730,"sequenceDiagram 
+   note over H,A: goal setting 
+   A ->> H: Ask [question] 
+   A ->> H: Explain [status] 
+
+   note over H,A: insight synthesis 
+   A ->> H: Recommend [labels] 
+   H ->> A: Respond [feedback] 
+   A ->> A: Update [model]",,Insight Synthesis,Refiner,"Recommender, Refiner",Repetitive,Text,Text Vis,Medium,High,Low,One-shot,High,High,domain expert,"The AI recommends labels (text), people provide feedback and modifications."
+17,Geono-Cluster: Interactive Visual Cluster Analysis for Biologists,2021,TVCG,https://ieeexplore.ieee.org/document/9128014/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Show [layout]
+    H ->> A: Demonstrate [action]
+    A ->> H: Recommend [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [option]
+    A ->> H: Update [view]
+    opt Exploration
+        H ->> A: Adjust [features]
+        A ->> H: Revise [recommendation]
+    end
+    opt Subcluster
+        H ->> A: Request [subcluster]
+        A ->> H: Generate [panel]
+    end
+    opt MergeSplit
+        H ->> A: Drag [cluster]
+        A ->> H: Recompute [layout]
+    end",,Data Preparation,Executor,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,The person inputs biological datasets.
+17,Geono-Cluster: Interactive Visual Cluster Analysis for Biologists,2021,TVCG,https://ieeexplore.ieee.org/document/9128014/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Show [layout]
+    H ->> A: Demonstrate [action]
+    A ->> H: Recommend [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [option]
+    A ->> H: Update [view]
+    opt Exploration
+        H ->> A: Adjust [features]
+        A ->> H: Revise [recommendation]
+    end
+    opt Subcluster
+        H ->> A: Request [subcluster]
+        A ->> H: Generate [panel]
+    end
+    opt MergeSplit
+        H ->> A: Drag [cluster]
+        A ->> H: Recompute [layout]
+    end",,Visualization,,"Presenter, Recommender",Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,domain expert,The system displays cluster layouts and recommends clusters through visualization.
+17,Geono-Cluster: Interactive Visual Cluster Analysis for Biologists,2021,TVCG,https://ieeexplore.ieee.org/document/9128014/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Show [layout]
+    H ->> A: Demonstrate [action]
+    A ->> H: Recommend [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [option]
+    A ->> H: Update [view]
+    opt Exploration
+        H ->> A: Adjust [features]
+        A ->> H: Revise [recommendation]
+    end
+    opt Subcluster
+        H ->> A: Request [subcluster]
+        A ->> H: Generate [panel]
+    end
+    opt MergeSplit
+        H ->> A: Drag [cluster]
+        A ->> H: Recompute [layout]
+    end",,Insight Synthesis,"Refiner, Selector","Producer, Refiner",Repetitive,Vis Widget,,Medium,High,Low,One-shot,High,High,domain expert,"The user selects or adjusts clusters, the system updates layouts and provides recommendations."
+18,Integrated Dual Analysis of Quantitative and Qualitative High-Dimensional Data,2021,TVCG,https://ieeexplore.ieee.org/document/9346003/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+   note over H,A: Visualization
+    A ->> H: Compute [overview]
+    H ->> A: Select [subset]
+    A ->> H: Update [statistics]
+    H ->> A: Explore [dimensions]
+    A ->> H: Highlight [deviation]
+
+    note over H,A: Insight Synthesis
+    opt Missingness
+        A ->> H: Encode [transparency]
+        H ->> A: Filter [values]
+    end
+    opt Hypothesis
+        H ->> A: Form [hypothesis]
+        A ->> H: Show [correlation]
+    end",,Visualization,Explorer,Updater,Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,domain expert,The system generates statistical overviews and highlights deviations through visualization.
+18,Integrated Dual Analysis of Quantitative and Qualitative High-Dimensional Data,2021,TVCG,https://ieeexplore.ieee.org/document/9346003/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+   note over H,A: Visualization
+    A ->> H: Compute [overview]
+    H ->> A: Select [subset]
+    A ->> H: Update [statistics]
+    H ->> A: Explore [dimensions]
+    A ->> H: Highlight [deviation]
+
+    note over H,A: Insight Synthesis
+    opt Missingness
+        A ->> H: Encode [transparency]
+        H ->> A: Filter [values]
+    end
+    opt Hypothesis
+        H ->> A: Form [hypothesis]
+        A ->> H: Show [correlation]
+    end",,Insight Synthesis,Selector,,Repetitive,Text,Vis,Medium,High,Low,One-shot,High,High,domain expert,"The user proposes hypotheses and filters values, the AI visualizes missingness or shows correlations."
+19,DimLift: Interactive Hierarchical Data Exploration Through Dimensional Bundling,2021,TVCG,https://ieeexplore.ieee.org/document/9349198/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Generate [bundles]
+    H ->> A: Explore [view]
+    A ->> H: Show [feedback]
+
+    note over H,A: Insight Synthesis
+    opt Structural
+        H ->> A: Modify [bundle]
+        A ->> H: Update [layout]
+    end
+    opt View
+        H ->> A: Drilldown [axis]
+        A ->> H: Display [detail]
+    end
+    opt Missingness
+        A ->> H: Encode [glyphs]
+        H ->> A: Filter [subset]
+    end
+    H ->> A: Form [hypothesis]
+    A ->> H: Support [evidence]",,Visualization,Explorer,"Generator, Presenter",Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,domain expert,"The system generates dimension bundles and presents them, the user explores views."
+19,DimLift: Interactive Hierarchical Data Exploration Through Dimensional Bundling,2021,TVCG,https://ieeexplore.ieee.org/document/9349198/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Generate [bundles]
+    H ->> A: Explore [view]
+    A ->> H: Show [feedback]
+
+    note over H,A: Insight Synthesis
+    opt Structural
+        H ->> A: Modify [bundle]
+        A ->> H: Update [layout]
+    end
+    opt View
+        H ->> A: Drilldown [axis]
+        A ->> H: Display [detail]
+    end
+    opt Missingness
+        A ->> H: Encode [glyphs]
+        H ->> A: Filter [subset]
+    end
+    H ->> A: Form [hypothesis]
+    A ->> H: Support [evidence]",,Insight Synthesis,"Refiner, Selector","Producer, Recommender, Refiner",Repetitive,Vis,,Medium,High,Low,One-shot,High,High,domain expert,"The user modifies bundles or drills down, the AI updates layouts and shows evidence."
+20,Integrating Prior Knowledge in Mixed-Initiative Social Network Clustering,2021,TVCG,https://doi.org/10.1109/TVCG.2020.3030347,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [goal]
+
+    note over H,A: Data Preparation
+    A ->> H: Run [task]
+    A ->> H: Rank [table]
+    H ->> A: Select [task]
+
+    note over H,A: Visualization
+    A ->> H: Show [vis]
+
+    note over H,A: Insight Synthesis
+    alt Expand clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Accept [goal]
+    else Extra clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Reject [goal]
+    end",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user provides clustering goals or prior knowledge.
+20,Integrating Prior Knowledge in Mixed-Initiative Social Network Clustering,2021,TVCG,https://doi.org/10.1109/TVCG.2020.3030347,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [goal]
+
+    note over H,A: Data Preparation
+    A ->> H: Run [task]
+    A ->> H: Rank [table]
+    H ->> A: Select [task]
+
+    note over H,A: Visualization
+    A ->> H: Show [vis]
+
+    note over H,A: Insight Synthesis
+    alt Expand clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Accept [goal]
+    else Extra clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Reject [goal]
+    end",,Data Preparation,,"Analyzer, Executor",Sequential,,Vis Text,High,Medium,Low,One-shot,Medium,Medium,domain expert,The system runs clustering algorithms and ranks results in tables and text.
+20,Integrating Prior Knowledge in Mixed-Initiative Social Network Clustering,2021,TVCG,https://doi.org/10.1109/TVCG.2020.3030347,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [goal]
+
+    note over H,A: Data Preparation
+    A ->> H: Run [task]
+    A ->> H: Rank [table]
+    H ->> A: Select [task]
+
+    note over H,A: Visualization
+    A ->> H: Show [vis]
+
+    note over H,A: Insight Synthesis
+    alt Expand clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Accept [goal]
+    else Extra clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Reject [goal]
+    end",,Visualization,,Presenter,Sequential,,Vis,Medium,Medium,High,One-shot,Low,High,domain expert,The system presents clustering results.
+20,Integrating Prior Knowledge in Mixed-Initiative Social Network Clustering,2021,TVCG,https://doi.org/10.1109/TVCG.2020.3030347,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [goal]
+
+    note over H,A: Data Preparation
+    A ->> H: Run [task]
+    A ->> H: Rank [table]
+    H ->> A: Select [task]
+
+    note over H,A: Visualization
+    A ->> H: Show [vis]
+
+    note over H,A: Insight Synthesis
+    alt Expand clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Accept [goal]
+    else Extra clusters
+        A ->> H: Suggest [insight]
+        H ->> A: Reject [goal]
+    end",,Insight Synthesis,Evaluator,Recommender,Decision,,Text Vis,Medium,High,Low,Continuous,High,High,domain expert,"The system recommends extended clusters, the user accepts or rejects, combining text and visualization."
+21,Interweaving Multimodal Interaction With Flexible Unit Visualizations for Data Exploration,2021,TVCG,https://ieeexplore.ieee.org/document/9023002/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Direct manipulation
+        H ->> A: Manipulate [view]
+    and Natural language
+        H ->> A: Speak [command]
+    end
+
+    note over H,A: Data Preparation
+    A ->> H: Interpret [input]
+
+    note over H,A: Visualization
+    A ->> H: Update [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Customize
+        H ->> A: Reorganize [marks]
+        A ->> H: Reflect [layout]
+    end",,Goal Setting,"Demonstrator, Specifier",,Parallel,Speech Widget Sketch Vis,,Medium,Medium,Low,One-shot,High,Low,general user,"The user manipulates views or commands directly via speech, pen, or touch."
+21,Interweaving Multimodal Interaction With Flexible Unit Visualizations for Data Exploration,2021,TVCG,https://ieeexplore.ieee.org/document/9023002/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Direct manipulation
+        H ->> A: Manipulate [view]
+    and Natural language
+        H ->> A: Speak [command]
+    end
+
+    note over H,A: Data Preparation
+    A ->> H: Interpret [input]
+
+    note over H,A: Visualization
+    A ->> H: Update [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Customize
+        H ->> A: Reorganize [marks]
+        A ->> H: Reflect [layout]
+    end",,Data Preparation,,Interpreter,Sequential,,Text Widget,High,Medium,Low,One-shot,Medium,Medium,general user,The system interprets multimodal input.
+21,Interweaving Multimodal Interaction With Flexible Unit Visualizations for Data Exploration,2021,TVCG,https://ieeexplore.ieee.org/document/9023002/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Direct manipulation
+        H ->> A: Manipulate [view]
+    and Natural language
+        H ->> A: Speak [command]
+    end
+
+    note over H,A: Data Preparation
+    A ->> H: Interpret [input]
+
+    note over H,A: Visualization
+    A ->> H: Update [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Customize
+        H ->> A: Reorganize [marks]
+        A ->> H: Reflect [layout]
+    end",,Visualization,,Updater,Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,general user,The system updates flexible cell visualizations.
+21,Interweaving Multimodal Interaction With Flexible Unit Visualizations for Data Exploration,2021,TVCG,https://ieeexplore.ieee.org/document/9023002/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Direct manipulation
+        H ->> A: Manipulate [view]
+    and Natural language
+        H ->> A: Speak [command]
+    end
+
+    note over H,A: Data Preparation
+    A ->> H: Interpret [input]
+
+    note over H,A: Visualization
+    A ->> H: Update [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Customize
+        H ->> A: Reorganize [marks]
+        A ->> H: Reflect [layout]
+    end",,Insight Synthesis,Producer,,Repetitive,Vis,,Medium,High,Low,One-shot,High,High,general user,"The user customizes markers, the system updates layouts."
+22,Snowy: Recommending Utterances for Conversational Visual Analysis,2021,UIST,https://doi.org/10.1145/3472749.3474792,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ask [utterance]
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Cold start
+        A ->> H: Suggest [utterance]
+    end
+    opt Follow-up
+        A ->> H: Suggest [utterance]
+        H ->> A: Select [utterance]
+        A ->> H: Update [visualization]
+    end
+    opt Deictic
+        H ->> A: Select [marks]
+        A ->> H: Suggest [utterance]
+    end",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,novice/general,The user poses questions via natural language utterance.
+22,Snowy: Recommending Utterances for Conversational Visual Analysis,2021,UIST,https://doi.org/10.1145/3472749.3474792,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ask [utterance]
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Cold start
+        A ->> H: Suggest [utterance]
+    end
+    opt Follow-up
+        A ->> H: Suggest [utterance]
+        H ->> A: Select [utterance]
+        A ->> H: Update [visualization]
+    end
+    opt Deictic
+        H ->> A: Select [marks]
+        A ->> H: Suggest [utterance]
+    end",,Visualization,,Presenter,Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,novice/general,The AI presents visualization results.
+22,Snowy: Recommending Utterances for Conversational Visual Analysis,2021,UIST,https://doi.org/10.1145/3472749.3474792,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ask [utterance]
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Cold start
+        A ->> H: Suggest [utterance]
+    end
+    opt Follow-up
+        A ->> H: Suggest [utterance]
+        H ->> A: Select [utterance]
+        A ->> H: Update [visualization]
+    end
+    opt Deictic
+        H ->> A: Select [marks]
+        A ->> H: Suggest [utterance]
+    end",,Insight Synthesis,Selector,"Recommender, Refiner",Repetitive,Widget,Text Vis,Medium,High,Medium,Continuous,High,High,novice/general,"The AI recommends further utterances, the user selects or chooses based on visualization."
+23,Learning Contextualized User Preferences for Co-Adaptive Guidance in Mixed-Initiative Topic Model Refinement,2021,CGF,https://onlinelibrary.wiley.com/doi/10.1111/cgf.14301,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Suggest [refinement operation, preview, justification]
+
+    note over H,A: Insight Synthesis
+    alt Accept suggestion
+        H ->> A: Provide [positive feedback]
+        A ->> A: Learn [preference rule]
+    else Reject suggestion
+        H ->> A: Provide [negative feedback]
+        A ->> A: Adjust [when to guide]
+    end
+    H ->> H: Update [topic model understanding]",,Visualization,,Recommender,Repetitive,,Vis Text,Medium,Medium,High,One-shot,Low,High,domain expert,The AI suggests model improvement operations and presents previews.
+23,Learning Contextualized User Preferences for Co-Adaptive Guidance in Mixed-Initiative Topic Model Refinement,2021,CGF,https://onlinelibrary.wiley.com/doi/10.1111/cgf.14301,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    A ->> H: Suggest [refinement operation, preview, justification]
+
+    note over H,A: Insight Synthesis
+    alt Accept suggestion
+        H ->> A: Provide [positive feedback]
+        A ->> A: Learn [preference rule]
+    else Reject suggestion
+        H ->> A: Provide [negative feedback]
+        A ->> A: Adjust [when to guide]
+    end
+    H ->> H: Update [topic model understanding]",,Insight Synthesis,"Refiner, Selector",Refiner,Decision,Text,,Medium,High,Low,Continuous,High,High,domain expert,"The user accepts or rejects, the AI learns preference rules."
+24,Lumos: Increasing Awareness of Analytic Behavior during Visual Data Analysis,2022,TVCG,https://ieeexplore.ieee.org/document/9552196/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par User exploration
+        H ->> A: Explore [data]
+    and System monitoring
+        note over H,A: Visualization
+        A ->> A: Capture [trace]
+        A ->> H: Provide [feedback]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> A: Reflect [behavior]
+    A ->> H: Compare [distribution]
+    H ->> A: Adjust [analysis]",,Goal Setting,Demonstrator,,Parallel,Vis,,Medium,Medium,Low,Continuous,High,Low,general user,"The user freely explores data, mainly via visualization interfaces."
+24,Lumos: Increasing Awareness of Analytic Behavior during Visual Data Analysis,2022,TVCG,https://ieeexplore.ieee.org/document/9552196/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par User exploration
+        H ->> A: Explore [data]
+    and System monitoring
+        note over H,A: Visualization
+        A ->> A: Capture [trace]
+        A ->> H: Provide [feedback]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> A: Reflect [behavior]
+    A ->> H: Compare [distribution]
+    H ->> A: Adjust [analysis]",,Visualization,,Updater,Parallel,,Vis,Medium,Medium,Medium,Continuous,Low,High,general user,The system captures trajectories and provides feedback with in-situ and ex-situ visualizations.
+24,Lumos: Increasing Awareness of Analytic Behavior during Visual Data Analysis,2022,TVCG,https://ieeexplore.ieee.org/document/9552196/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par User exploration
+        H ->> A: Explore [data]
+    and System monitoring
+        note over H,A: Visualization
+        A ->> A: Capture [trace]
+        A ->> H: Provide [feedback]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> A: Reflect [behavior]
+    A ->> H: Compare [distribution]
+    H ->> A: Adjust [analysis]",,Insight Synthesis,Refiner,,Repetitive,Vis,,Medium,High,Low,One-shot,High,High,general user,"The user reflects on analytic behavior, the system compares with baseline distributions and visualizes differences."
+25,Erato: Cooperative Data Story Editing via Fact Interpolation,2022,TVCG,http://arxiv.org/abs/2209.02529,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [dataset]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [facts]
+    H ->> A: Select [keyframes]
+    A ->> H: Interpolate [candidates]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Edit [facts]
+    A ->> H: Update [story]
+    opt Refinement
+        H ->> A: Adjust [keyframe]
+        A ->> H: Revise [candidates]
+    end
+    A ->> H: Render [story]",,Data Preparation,Executor,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,general user,The user provides a dataset as input.
+25,Erato: Cooperative Data Story Editing via Fact Interpolation,2022,TVCG,http://arxiv.org/abs/2209.02529,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [dataset]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [facts]
+    H ->> A: Select [keyframes]
+    A ->> H: Interpolate [candidates]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Edit [facts]
+    A ->> H: Update [story]
+    opt Refinement
+        H ->> A: Adjust [keyframe]
+        A ->> H: Revise [candidates]
+    end
+    A ->> H: Render [story]",,Visualization,,"Generator, Recommender",Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,general user,"The AI recommends facts and interpolates keyframes, visualizing candidates."
+25,Erato: Cooperative Data Story Editing via Fact Interpolation,2022,TVCG,http://arxiv.org/abs/2209.02529,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [dataset]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [facts]
+    H ->> A: Select [keyframes]
+    A ->> H: Interpolate [candidates]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Edit [facts]
+    A ->> H: Update [story]
+    opt Refinement
+        H ->> A: Adjust [keyframe]
+        A ->> H: Revise [candidates]
+    end
+    A ->> H: Render [story]",,Insight Synthesis,Refiner,Refiner,Repetitive,Vis Text,,Medium,High,Low,One-shot,High,High,general user,"The user edits story facts, the system updates and renders stories, combining text and visualization."
+26,Tisane: Authoring Statistical Models via Formal Reasoning from Conceptual and Data Relationships,2022,CHI,https://doi.org/10.1145/3491102.3501888,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [design]
+
+    note over H,A: Data Preparation
+    A ->> A: Compile [graph]
+    A ->> H: Ask [question]
+    H ->> A: Provide [answer]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Infer [model]
+    A ->> H: Output [code]",,Goal Setting,Specifier,,Sequential,Code,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user specifies a research design language.
+26,Tisane: Authoring Statistical Models via Formal Reasoning from Conceptual and Data Relationships,2022,CHI,https://doi.org/10.1145/3491102.3501888,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [design]
+
+    note over H,A: Data Preparation
+    A ->> A: Compile [graph]
+    A ->> H: Ask [question]
+    H ->> A: Provide [answer]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Infer [model]
+    A ->> H: Output [code]",,Data Preparation,Executor,Interpreter,Sequential,Text,Code,High,Medium,Low,One-shot,Medium,Medium,domain expert,"The system compiles graphs and raises questions, the user answers."
+26,Tisane: Authoring Statistical Models via Formal Reasoning from Conceptual and Data Relationships,2022,CHI,https://doi.org/10.1145/3491102.3501888,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [design]
+
+    note over H,A: Data Preparation
+    A ->> A: Compile [graph]
+    A ->> H: Ask [question]
+    H ->> A: Provide [answer]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Infer [model]
+    A ->> H: Output [code]",,Insight Synthesis,,"Producer, Recommender",Sequential,,Code,Medium,High,Low,One-shot,High,High,domain expert,The system infers statistical models and outputs code.
+27,VitaLITy: Promoting Serendipitous Discovery of Academic Literature,2022,TVCG,https://arxiv.org/abs/2108.03366,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Input [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [embedding]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [papers]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Filter [results]
+    H ->> A: Save [papers]
+    A ->> H: Export [collection]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user inputs queries or summaries.
+27,VitaLITy: Promoting Serendipitous Discovery of Academic Literature,2022,TVCG,https://arxiv.org/abs/2108.03366,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Input [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [embedding]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [papers]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Filter [results]
+    H ->> A: Save [papers]
+    A ->> H: Export [collection]",,Data Preparation,,Analyzer,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,domain expert,The system generates embeddings.
+27,VitaLITy: Promoting Serendipitous Discovery of Academic Literature,2022,TVCG,https://arxiv.org/abs/2108.03366,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Input [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [embedding]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [papers]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Filter [results]
+    H ->> A: Save [papers]
+    A ->> H: Export [collection]",,Visualization,,Recommender,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The system recommends literature and visualizes scatterplots.
+27,VitaLITy: Promoting Serendipitous Discovery of Academic Literature,2022,TVCG,https://arxiv.org/abs/2108.03366,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Input [query]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [embedding]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [papers]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Filter [results]
+    H ->> A: Save [papers]
+    A ->> H: Export [collection]",,Insight Synthesis,Selector,Producer,Sequential,Vis Widget,,Medium,High,Low,One-shot,High,High,domain expert,"The user filters and saves results, the system exports collections."
+28,Scholastic: Graphical Human-AI Collaborationfor Inductive and Interpretive Text Analysis,2022,UIST,https://dl.acm.org/doi/pdf/10.1145/3526113.3545681,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Sample [documents]
+    H ->> A: Apply [codes]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [clusters]
+    H ->> A: Refine [categories]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Interpret [themes]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Medium,Continuous,High,Low,domain expert,"The user samples documents and applies codes, with goals implied in research questions."
+28,Scholastic: Graphical Human-AI Collaborationfor Inductive and Interpretive Text Analysis,2022,UIST,https://dl.acm.org/doi/pdf/10.1145/3526113.3545681,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Sample [documents]
+    H ->> A: Apply [codes]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [clusters]
+    H ->> A: Refine [categories]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Interpret [themes]",,Data Preparation,,Executor,Repetitive,Text,Vis,High,Medium,Low,One-shot,Medium,Medium,domain expert,"The AI generates clusters, the user refines categories, combining text and visualization."
+28,Scholastic: Graphical Human-AI Collaborationfor Inductive and Interpretive Text Analysis,2022,UIST,https://dl.acm.org/doi/pdf/10.1145/3526113.3545681,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Sample [documents]
+    H ->> A: Apply [codes]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [clusters]
+    H ->> A: Refine [categories]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Interpret [themes]",,Visualization,,Explorer,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The system presents clusters of documents and words.
+28,Scholastic: Graphical Human-AI Collaborationfor Inductive and Interpretive Text Analysis,2022,UIST,https://dl.acm.org/doi/pdf/10.1145/3526113.3545681,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Sample [documents]
+    H ->> A: Apply [codes]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [clusters]
+    H ->> A: Refine [categories]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [clusters]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Interpret [themes]",,Insight Synthesis,"Evaluator, Refiner",Producer,Sequential,Text,Vis,Medium,High,Low,One-shot,High,High,domain expert,"The user interprets topics, combining text semantics with visualization."
+29,MultiVision: Designing Analytical Dashboards with Deep Learning Based Recommendation,2022,TVCG,https://ieeexplore.ieee.org/document/9552449/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [charts]
+
+    note over H,A: Visualization
+    alt Edit
+        H ->> A: Modify [view]
+        A ->> H: Update [suggestion]
+    else Accept
+        H ->> A: Confirm [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Save [log]",,Goal Setting,Updater,,Sequential,Widget,,Medium,Medium,Low,One-shot,High,Low,general user,The user uploads tabular datasets.
+29,MultiVision: Designing Analytical Dashboards with Deep Learning Based Recommendation,2022,TVCG,https://ieeexplore.ieee.org/document/9552449/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [charts]
+
+    note over H,A: Visualization
+    alt Edit
+        H ->> A: Modify [view]
+        A ->> H: Update [suggestion]
+    else Accept
+        H ->> A: Confirm [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Save [log]",,Data Preparation,,Recommender,Sequential,,Vis,High,Medium,High,One-shot,Medium,Medium,general user,The AI recommends candidate charts.
+29,MultiVision: Designing Analytical Dashboards with Deep Learning Based Recommendation,2022,TVCG,https://ieeexplore.ieee.org/document/9552449/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [charts]
+
+    note over H,A: Visualization
+    alt Edit
+        H ->> A: Modify [view]
+        A ->> H: Update [suggestion]
+    else Accept
+        H ->> A: Confirm [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Save [log]",,Visualization,Updater,Updater,Decision,Vis Widget,,Medium,Medium,Low,One-shot,Low,High,general user,The user edits or accepts recommended dashboards.
+29,MultiVision: Designing Analytical Dashboards with Deep Learning Based Recommendation,2022,TVCG,https://ieeexplore.ieee.org/document/9552449/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [charts]
+
+    note over H,A: Visualization
+    alt Edit
+        H ->> A: Modify [view]
+        A ->> H: Update [suggestion]
+    else Accept
+        H ->> A: Confirm [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Save [log]",,Insight Synthesis,,Selector,Sequential,,Vis,Medium,High,Low,One-shot,High,High,general user,The AI saves history and logs.
+30,ChartSeer: Interactive Steering Exploratory Visual Analysis With Machine Intelligence,2022,TVCG,https://ieeexplore.ieee.org/document/9174891/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Create [chart]
+
+    note over H,A: Visualization
+    A ->> H: Summarize [state]
+    A ->> H: Recommend [chart]
+
+    alt Accept
+        H ->> A: Select [recommendation]
+        A ->> H: Generate [chart]
+    else Reject
+        H ->> A: Specify [goal]
+        A ->> H: Suggest [alternative]
+    end",,Goal Setting,Demonstrator,,Sequential,Widget,,Medium,Medium,High,One-shot,High,Low,general user,The user manually creates initial charts.
+30,ChartSeer: Interactive Steering Exploratory Visual Analysis With Machine Intelligence,2022,TVCG,https://ieeexplore.ieee.org/document/9174891/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Create [chart]
+
+    note over H,A: Visualization
+    A ->> H: Summarize [state]
+    A ->> H: Recommend [chart]
+
+    alt Accept
+        H ->> A: Select [recommendation]
+        A ->> H: Generate [chart]
+    else Reject
+        H ->> A: Specify [goal]
+        A ->> H: Suggest [alternative]
+    end",,Visualization,,"Generator, Recommender",Decision,,Vis,Medium,Medium,Low,One-shot,Low,High,general user,The AI summarizes the current state and recommends charts.
+31,CrossData: Leveraging Text-Data Connections for Authoring Data Documents,2022,CHI,https://dl.acm.org/doi/abs/10.1145/3491102.3517485,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Write [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Detect [connection]
+
+    note over H,A: Visualization
+    H ->> A: Insert [table]
+    A ->> H: Update [chart]
+
+    note over H,A: Insight Synthesis
+    par Explore
+        H ->> A: Query [data]
+        A ->> H: Return [value]
+    and Revise
+        H ->> A: Edit [text]
+        A ->> H: Sync [data]
+    end",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,general user,The user writes text as a starting point.
+31,CrossData: Leveraging Text-Data Connections for Authoring Data Documents,2022,CHI,https://dl.acm.org/doi/abs/10.1145/3491102.3517485,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Write [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Detect [connection]
+
+    note over H,A: Visualization
+    H ->> A: Insert [table]
+    A ->> H: Update [chart]
+
+    note over H,A: Insight Synthesis
+    par Explore
+        H ->> A: Query [data]
+        A ->> H: Return [value]
+    and Revise
+        H ->> A: Edit [text]
+        A ->> H: Sync [data]
+    end",,Data Preparation,,Interpreter,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,general user,The AI detects and builds connections between text and data.
+31,CrossData: Leveraging Text-Data Connections for Authoring Data Documents,2022,CHI,https://dl.acm.org/doi/abs/10.1145/3491102.3517485,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Write [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Detect [connection]
+
+    note over H,A: Visualization
+    H ->> A: Insert [table]
+    A ->> H: Update [chart]
+
+    note over H,A: Insight Synthesis
+    par Explore
+        H ->> A: Query [data]
+        A ->> H: Return [value]
+    and Revise
+        H ->> A: Edit [text]
+        A ->> H: Sync [data]
+    end",,Visualization,Updater,Updater,Sequential,Vis,,Medium,Medium,Low,Continuous,Low,High,general user,"The user inserts tables, the AI updates charts."
+31,CrossData: Leveraging Text-Data Connections for Authoring Data Documents,2022,CHI,https://dl.acm.org/doi/abs/10.1145/3491102.3517485,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Write [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Detect [connection]
+
+    note over H,A: Visualization
+    H ->> A: Insert [table]
+    A ->> H: Update [chart]
+
+    note over H,A: Insight Synthesis
+    par Explore
+        H ->> A: Query [data]
+        A ->> H: Return [value]
+    and Revise
+        H ->> A: Edit [text]
+        A ->> H: Sync [data]
+    end",,Insight Synthesis,"Refiner, Selector",Refiner,Parallel,Text,Vis,Medium,High,Low,One-shot,High,High,general user,"The user queries or edits text, the AI synchronizes data and results."
+32,Diverse Interaction Recommendation for Public Users Exploring Multi-view Visualization using Deep Learning,2022,TVCG,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9903596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Perform [interaction]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [action]
+
+    note over H,A: Visualization
+    alt Accept
+        H ->> A: Execute [interaction]
+    else Ignore
+        H ->> A: Perform [interaction]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Adapt [model]",,Goal Setting,Demonstrator,,Sequential,Vis Widget,,Medium,Medium,Low,One-shot,High,Low,general user,The user interacts within visualizations.
+32,Diverse Interaction Recommendation for Public Users Exploring Multi-view Visualization using Deep Learning,2022,TVCG,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9903596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Perform [interaction]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [action]
+
+    note over H,A: Visualization
+    alt Accept
+        H ->> A: Execute [interaction]
+    else Ignore
+        H ->> A: Perform [interaction]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Adapt [model]",,Data Preparation,,Recommender,Sequential,,Vis,High,Medium,High,One-shot,Medium,Medium,general user,The system recommends next interactions.
+32,Diverse Interaction Recommendation for Public Users Exploring Multi-view Visualization using Deep Learning,2022,TVCG,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9903596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Perform [interaction]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [action]
+
+    note over H,A: Visualization
+    alt Accept
+        H ->> A: Execute [interaction]
+    else Ignore
+        H ->> A: Perform [interaction]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Adapt [model]",,Visualization,Explorer,,Decision,Vis Widget,,Medium,Medium,Medium,Continuous,Low,High,general user,The user accepts or ignores recommended interactions.
+32,Diverse Interaction Recommendation for Public Users Exploring Multi-view Visualization using Deep Learning,2022,TVCG,https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9903596,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Perform [interaction]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [action]
+
+    note over H,A: Visualization
+    alt Accept
+        H ->> A: Execute [interaction]
+    else Ignore
+        H ->> A: Perform [interaction]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Adapt [model]",,Insight Synthesis,,Refiner,Repetitive,,Vis,Medium,High,Low,One-shot,High,High,general user,The system adapts to user behavior and improves recommendations.
+33,ConceptEVA: Concept-Based Interactive Exploration and Customization of Document Summaries,2023,CHI,https://dl.acm.org/doi/full/10.1145/3544548.3581260,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Upload [document]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Generate [summary]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concepts]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [concepts]
+    A ->> H: Update [summary]
+    opt Edit
+        H ->> A: Revise [sentence]
+        A ->> H: Paraphrase [option]
+    end",,Visualization,"Refiner, Selector","Producer, Refiner",Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The AI visualizes concept networks.
+33,ConceptEVA: Concept-Based Interactive Exploration and Customization of Document Summaries,2023,CHI,https://dl.acm.org/doi/full/10.1145/3544548.3581260,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Upload [document]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Generate [summary]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concepts]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [concepts]
+    A ->> H: Update [summary]
+    opt Edit
+        H ->> A: Revise [sentence]
+        A ->> H: Paraphrase [option]
+    end",,Insight Synthesis,,Generator,Sequential,,Text Vis,Medium,High,Medium,Continuous,High,High,domain expert,"The AI generates summaries, the user selects concepts and updates text."
+33,ConceptEVA: Concept-Based Interactive Exploration and Customization of Document Summaries,2023,CHI,https://dl.acm.org/doi/full/10.1145/3544548.3581260,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Upload [document]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Generate [summary]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concepts]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Select [concepts]
+    A ->> H: Update [summary]
+    opt Edit
+        H ->> A: Revise [sentence]
+        A ->> H: Paraphrase [option]
+    end",,Data Preparation,Executor,,Repetitive,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,The user uploads documents.
+34,HiTailor: Interactive Transformation and Visualization for Hierarchical Tabular Data,2023,TVCG,https://ieeexplore.ieee.org/document/9903293/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [table]
+    A ->> A: Parse [model]
+    H ->> A: Apply [transformation]
+
+    note over H,A: Visualization
+    A ->> H: Update [table]
+    H ->> A: Select [TableUnit]
+    A ->> H: Recommend [blocks]
+    H ->> A: Choose [template]
+    H ->> A: Configure [mapping]
+    A ->> H: Render [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Iteration
+        H ->> A: Refine [unit]
+        A ->> H: Revise [recommendation]
+    end",,Data Preparation,"Executor, Transformer",Interpreter,Sequential,Widget,,High,Medium,Low,One-shot,Medium,Medium,domain expert,"The user provides tables and applies transformations, interface operations are primary."
+34,HiTailor: Interactive Transformation and Visualization for Hierarchical Tabular Data,2023,TVCG,https://ieeexplore.ieee.org/document/9903293/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [table]
+    A ->> A: Parse [model]
+    H ->> A: Apply [transformation]
+
+    note over H,A: Visualization
+    A ->> H: Update [table]
+    H ->> A: Select [TableUnit]
+    A ->> H: Recommend [blocks]
+    H ->> A: Choose [template]
+    H ->> A: Configure [mapping]
+    A ->> H: Render [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Iteration
+        H ->> A: Refine [unit]
+        A ->> H: Revise [recommendation]
+    end",,Visualization,Updater,"Generator, Recommender, Updater",Sequential,Widget,Vis Widget,Medium,Medium,Medium,Continuous,Low,High,domain expert,"The system updates table views and recommends TableUnits, the user selects templates and configures mappings."
+34,HiTailor: Interactive Transformation and Visualization for Hierarchical Tabular Data,2023,TVCG,https://ieeexplore.ieee.org/document/9903293/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [table]
+    A ->> A: Parse [model]
+    H ->> A: Apply [transformation]
+
+    note over H,A: Visualization
+    A ->> H: Update [table]
+    H ->> A: Select [TableUnit]
+    A ->> H: Recommend [blocks]
+    H ->> A: Choose [template]
+    H ->> A: Configure [mapping]
+    A ->> H: Render [visualization]
+
+    note over H,A: Insight Synthesis
+    opt Iteration
+        H ->> A: Refine [unit]
+        A ->> H: Revise [recommendation]
+    end",,Insight Synthesis,Refiner,Refiner,Repetitive,,Vis Widget,Medium,High,Low,One-shot,High,High,domain expert,"The user refines units, the system updates recommendations, completing visual interactions."
+35,Angler: Helping Machine Translation Practitioners Prioritize Model Improvements,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580790,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Identify [issue]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [set]
+    H ->> A: Curate [set]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [metrics]
+
+    note over H,A: Insight Synthesis
+    alt Analyze
+        H ->> A: Inspect [samples]
+        A ->> H: Update [signals]
+    else Compare
+        H ->> A: Select [sets]
+        A ->> H: Display [results]
+    end
+    H ->> A: Decide [priority]
+    A ->> H: Recommend [action]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Medium,Continuous,High,Low,domain expert,The user identifies model issues.
+35,Angler: Helping Machine Translation Practitioners Prioritize Model Improvements,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580790,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Identify [issue]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [set]
+    H ->> A: Curate [set]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [metrics]
+
+    note over H,A: Insight Synthesis
+    alt Analyze
+        H ->> A: Inspect [samples]
+        A ->> H: Update [signals]
+    else Compare
+        H ->> A: Select [sets]
+        A ->> H: Display [results]
+    end
+    H ->> A: Decide [priority]
+    A ->> H: Recommend [action]",,Data Preparation,Recommender,Recommender,Repetitive,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,"The system suggests candidate datasets, the user curates collections."
+35,Angler: Helping Machine Translation Practitioners Prioritize Model Improvements,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580790,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Identify [issue]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [set]
+    H ->> A: Curate [set]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [metrics]
+
+    note over H,A: Insight Synthesis
+    alt Analyze
+        H ->> A: Inspect [samples]
+        A ->> H: Update [signals]
+    else Compare
+        H ->> A: Select [sets]
+        A ->> H: Display [results]
+    end
+    H ->> A: Decide [priority]
+    A ->> H: Recommend [action]",,Visualization,,Generator,Sequential,,Vis,Medium,Medium,High,One-shot,Low,High,domain expert,The system presents performance metrics.
+35,Angler: Helping Machine Translation Practitioners Prioritize Model Improvements,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580790,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Identify [issue]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [set]
+    H ->> A: Curate [set]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [metrics]
+
+    note over H,A: Insight Synthesis
+    alt Analyze
+        H ->> A: Inspect [samples]
+        A ->> H: Update [signals]
+    else Compare
+        H ->> A: Select [sets]
+        A ->> H: Display [results]
+    end
+    H ->> A: Decide [priority]
+    A ->> H: Recommend [action]",,Insight Synthesis,"Evaluator, Selector","Producer, Recommender, Refiner",Decision,Vis,Text,Medium,High,Low,One-shot,High,High,domain expert,"The user inspects samples or compares collections, the system updates signals and recommends actions."
+36,Socrates: Data Story Generation via Adaptive Machine-Guided Elicitation of User Feedback,2023,TVCG,https://doi.org/10.1109/TVCG.2023.3327363,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Generate [story]
+
+    note over H,A: Insight Synthesis
+    opt Clarify
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Refine [story]
+    end
+    opt Repeat
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Update [story]
+    end",,Data Preparation,Executor,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,general user,The user provides datasets.
+36,Socrates: Data Story Generation via Adaptive Machine-Guided Elicitation of User Feedback,2023,TVCG,https://doi.org/10.1109/TVCG.2023.3327363,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Generate [story]
+
+    note over H,A: Insight Synthesis
+    opt Clarify
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Refine [story]
+    end
+    opt Repeat
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Update [story]
+    end",,Visualization,,Generator,Sequential,,Vis Text,Medium,Medium,Medium,Continuous,Low,High,general user,The system generates draft stories.
+36,Socrates: Data Story Generation via Adaptive Machine-Guided Elicitation of User Feedback,2023,TVCG,https://doi.org/10.1109/TVCG.2023.3327363,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]
+
+    note over H,A: Visualization
+    A ->> H: Generate [story]
+
+    note over H,A: Insight Synthesis
+    opt Clarify
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Refine [story]
+    end
+    opt Repeat
+        A ->> H: Ask [question]
+        H ->> A: Give [feedback]
+        A ->> H: Update [story]
+    end",,Insight Synthesis,Selector,"Refiner, Selector",Repetitive,,Text,Medium,High,Low,One-shot,High,High,general user,The system collects feedback via Q&A and updates stories.
+37,ONYX: Assisting Users in Teaching Natural Language Interfaces Through Multi-Modal Interactive Task Learning,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580964,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [action]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [option]
+    alt Ambiguity
+        A ->> H: Ask [question]
+        H ->> A: Clarify [input]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Guide [aid]
+    H ->> A: Edit [script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Update [output]",,Goal Setting,Demonstrator,,Sequential,Vis Widget Text,,Medium,Medium,High,One-shot,High,Low,novice/general,The user demonstrates actions or specifies goals via natural language.
+37,ONYX: Assisting Users in Teaching Natural Language Interfaces Through Multi-Modal Interactive Task Learning,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580964,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [action]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [option]
+    alt Ambiguity
+        A ->> H: Ask [question]
+        H ->> A: Clarify [input]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Guide [aid]
+    H ->> A: Edit [script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Update [output]",,Data Preparation,Recommender,Recommender,Decision,,Text Vis,High,Medium,Medium,Continuous,Medium,Medium,novice/general,"The AI asks clarifying questions, the user answers."
+37,ONYX: Assisting Users in Teaching Natural Language Interfaces Through Multi-Modal Interactive Task Learning,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580964,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [action]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [option]
+    alt Ambiguity
+        A ->> H: Ask [question]
+        H ->> A: Clarify [input]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Guide [aid]
+    H ->> A: Edit [script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Update [output]",,Visualization,Updater,Recommender,Repetitive,Code,Vis Text,Medium,Medium,Low,One-shot,Low,High,novice/general,"The AI provides visual and text assistance, the user edits scripts."
+37,ONYX: Assisting Users in Teaching Natural Language Interfaces Through Multi-Modal Interactive Task Learning,2023,CHI,https://dl.acm.org/doi/10.1145/3544548.3580964,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [action]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [option]
+    alt Ambiguity
+        A ->> H: Ask [question]
+        H ->> A: Clarify [input]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Guide [aid]
+    H ->> A: Edit [script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Update [output]",,Insight Synthesis,,Refiner,Sequential,,Text,Medium,High,Low,One-shot,High,High,novice/general,"The AI updates outputs, completing task learning."
+38,InkSight: Leveraging Sketch Interaction for Documenting Chart Findings in Computational Notebooks,2023,TVCG,https://arxiv.org/pdf/2307.07922,"sequenceDiagram
+participant H as Human
+participant A as AI
+
+note over H,A: Data Preparation
+H ->> A: Create [chart] 
+H ->> A: Sketch [intent] 
+A ->> A: Detect [region] 
+A ->> A: Infer [fact] 
+
+note over H,A: Insight Synthesis
+A ->> H: Generate [text] 
+opt Refinement
+H ->> A: Edit [text] 
+A ->> H: Update [text] 
+end",,Data Preparation,Analyzer,"Analyzer, Interpreter",Sequential,Sketch Vis,,High,Medium,Medium,Continuous,Medium,Medium,general user,"The user sketches on charts, the AI detects regions and infers facts."
+38,InkSight: Leveraging Sketch Interaction for Documenting Chart Findings in Computational Notebooks,2023,TVCG,https://arxiv.org/pdf/2307.07922,"sequenceDiagram
+participant H as Human
+participant A as AI
+
+note over H,A: Data Preparation
+H ->> A: Create [chart] 
+H ->> A: Sketch [intent] 
+A ->> A: Detect [region] 
+A ->> A: Infer [fact] 
+
+note over H,A: Insight Synthesis
+A ->> H: Generate [text] 
+opt Refinement
+H ->> A: Edit [text] 
+A ->> H: Update [text] 
+end",,Insight Synthesis,Refiner,"Producer, Refiner",Repetitive,,Text,Medium,High,Low,One-shot,High,High,general user,"The AI generates text summaries, the user edits and updates."
+39,MEDLEY: Intent-based Recommendations to Support Dashboard Composition,2023,TVCG,https://arxiv.org/pdf/2208.03175,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [intent]  
+
+    note over H,A: Insight Synthesis
+    A ->> A: Recommend [collection]  
+    A ->> H: Present [option]  
+    opt Manual
+        H ->> A: Select [view]  
+    end
+
+    note over H,A: Visualization
+    H ->> A: Configure [widget]  
+    A ->> H: Update [dashboard]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,general user,The user sets analytic intents.
+39,MEDLEY: Intent-based Recommendations to Support Dashboard Composition,2023,TVCG,https://arxiv.org/pdf/2208.03175,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [intent]  
+
+    note over H,A: Insight Synthesis
+    A ->> A: Recommend [collection]  
+    A ->> H: Present [option]  
+    opt Manual
+        H ->> A: Select [view]  
+    end
+
+    note over H,A: Visualization
+    H ->> A: Configure [widget]  
+    A ->> H: Update [dashboard]",,Visualization,Selector,"Producer, Recommender",Sequential,,Vis Widget,Medium,Medium,High,One-shot,Low,High,general user,"The AI recommends collections, the user configures components."
+39,MEDLEY: Intent-based Recommendations to Support Dashboard Composition,2023,TVCG,https://arxiv.org/pdf/2208.03175,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [intent]  
+
+    note over H,A: Insight Synthesis
+    A ->> A: Recommend [collection]  
+    A ->> H: Present [option]  
+    opt Manual
+        H ->> A: Select [view]  
+    end
+
+    note over H,A: Visualization
+    H ->> A: Configure [widget]  
+    A ->> H: Update [dashboard]",,Insight Synthesis,Updater,Updater,Decision,Vis,,Medium,High,Low,One-shot,High,High,general user,"The user refines dashboards, the AI updates."
+40,LightVA: Lightweight Visual Analytics with LLM Agent-Based Task Planning and Execution,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3496112,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Decompose [task]
+
+    note over H,A: Visualization
+    A ->> A: Execute [visualization & analysis]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [insights]
+    alt Task too complex
+        A ->> A: Recursive [plan & execute]
+    end
+    H ->> H: Inspect [results]
+    H ->> A: Refine [task or goal]",,Goal Setting,Explorer,Recommender,Sequential,Text Widget,Text,Medium,Medium,Low,One-shot,High,Low,novice/general,The user sets analytic goals.
+40,LightVA: Lightweight Visual Analytics with LLM Agent-Based Task Planning and Execution,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3496112,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Decompose [task]
+
+    note over H,A: Visualization
+    A ->> A: Execute [visualization & analysis]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [insights]
+    alt Task too complex
+        A ->> A: Recursive [plan & execute]
+    end
+    H ->> H: Inspect [results]
+    H ->> A: Refine [task or goal]",,Data Preparation,,Producer,Sequential,,Code,High,Medium,Low,One-shot,Medium,Medium,novice/general,The AI decomposes tasks into subtasks.
+40,LightVA: Lightweight Visual Analytics with LLM Agent-Based Task Planning and Execution,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3496112,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Decompose [task]
+
+    note over H,A: Visualization
+    A ->> A: Execute [visualization & analysis]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [insights]
+    alt Task too complex
+        A ->> A: Recursive [plan & execute]
+    end
+    H ->> H: Inspect [results]
+    H ->> A: Refine [task or goal]",,Visualization,Selector,,Sequential,Vis Code,Vis,Medium,Medium,Medium,Continuous,Low,High,novice/general,The AI performs data analysis and visualization.
+40,LightVA: Lightweight Visual Analytics with LLM Agent-Based Task Planning and Execution,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3496112,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Decompose [task]
+
+    note over H,A: Visualization
+    A ->> A: Execute [visualization & analysis]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [insights]
+    alt Task too complex
+        A ->> A: Recursive [plan & execute]
+    end
+    H ->> H: Inspect [results]
+    H ->> A: Refine [task or goal]",,Insight Synthesis,Recommender,Analyzer,Repetitive,Text Widget,Text Vis,Medium,High,Low,One-shot,High,High,novice/general,"The AI presents insights, the user inspects and adjusts tasks, possibly triggering recursive planning."
+41,EXMOS: Explanatory Model Steering Through Multifaceted Explanations and Data Configurations,2024,CHI,https://arxiv.org/pdf/2402.00491,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    A ->> H: Provide [explanation]
+
+    note over H,A: Data Preparation
+    alt Manual
+        H ->> A: Configure [data]
+    else Automated
+        A ->> H: Suggest [issue]
+        H ->> A: Approve [fix]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Update [explanation]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Retrain [model]
+    H ->> A: Steer [model]",,Goal Setting,,Specifier,Sequential,Text,Text Vis,Medium,Medium,High,One-shot,High,Low,domain expert,The AI provides model or data explanations with textual and visual dashboards.
+41,EXMOS: Explanatory Model Steering Through Multifaceted Explanations and Data Configurations,2024,CHI,https://arxiv.org/pdf/2402.00491,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    A ->> H: Provide [explanation]
+
+    note over H,A: Data Preparation
+    alt Manual
+        H ->> A: Configure [data]
+    else Automated
+        A ->> H: Suggest [issue]
+        H ->> A: Approve [fix]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Update [explanation]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Retrain [model]
+    H ->> A: Steer [model]",,Data Preparation,"Recommender, Transformer",Recommender,Decision,Widget Text,Vis,High,Medium,Low,One-shot,Medium,Medium,domain expert,The person configures data or approves AI suggestions through interface interactions and text.
+41,EXMOS: Explanatory Model Steering Through Multifaceted Explanations and Data Configurations,2024,CHI,https://arxiv.org/pdf/2402.00491,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    A ->> H: Provide [explanation]
+
+    note over H,A: Data Preparation
+    alt Manual
+        H ->> A: Configure [data]
+    else Automated
+        A ->> H: Suggest [issue]
+        H ->> A: Approve [fix]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Update [explanation]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Retrain [model]
+    H ->> A: Steer [model]",,Visualization,,Updater,Sequential,,Vis,Medium,Medium,Medium,Continuous,Low,High,domain expert,"The system updates explanations, showing model and data states in charts."
+41,EXMOS: Explanatory Model Steering Through Multifaceted Explanations and Data Configurations,2024,CHI,https://arxiv.org/pdf/2402.00491,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    A ->> H: Provide [explanation]
+
+    note over H,A: Data Preparation
+    alt Manual
+        H ->> A: Configure [data]
+    else Automated
+        A ->> H: Suggest [issue]
+        H ->> A: Approve [fix]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Update [explanation]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Retrain [model]
+    H ->> A: Steer [model]",,Insight Synthesis,,,Repetitive,Text,Vis,Medium,High,Low,One-shot,High,High,domain expert,"The person manipulates models, the AI retrains and outputs updated visual explanations."
+42,“The Data Says Otherwise” – Towards Automated Fact-checking and Communication of Data Claims,2024,UIST,https://dl.acm.org/doi/pdf/10.1145/3654777.3676359,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [claim]
+
+    note over H,A: Data Preparation
+    A ->> A: Map [data]
+    A ->> A: Retrieve [evidence]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [verdict]
+    alt Override
+        H ->> A: Correct [decision]
+        A ->> A: Revise [pipeline]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,general user,The user submits data statements.
+42,“The Data Says Otherwise” – Towards Automated Fact-checking and Communication of Data Claims,2024,UIST,https://dl.acm.org/doi/pdf/10.1145/3654777.3676359,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [claim]
+
+    note over H,A: Data Preparation
+    A ->> A: Map [data]
+    A ->> A: Retrieve [evidence]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [verdict]
+    alt Override
+        H ->> A: Correct [decision]
+        A ->> A: Revise [pipeline]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]",,Data Preparation,,Interpreter,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,general user,The system maps statements and retrieves evidence.
+42,“The Data Says Otherwise” – Towards Automated Fact-checking and Communication of Data Claims,2024,UIST,https://dl.acm.org/doi/pdf/10.1145/3654777.3676359,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [claim]
+
+    note over H,A: Data Preparation
+    A ->> A: Map [data]
+    A ->> A: Retrieve [evidence]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [verdict]
+    alt Override
+        H ->> A: Correct [decision]
+        A ->> A: Revise [pipeline]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]",,Insight Synthesis,Refiner,"Producer, Refiner",Sequential,,Vis,Medium,High,High,One-shot,High,High,general user,"The system provides conclusions, the user may correct them, and the AI updates pipelines."
+42,“The Data Says Otherwise” – Towards Automated Fact-checking and Communication of Data Claims,2024,UIST,https://dl.acm.org/doi/pdf/10.1145/3654777.3676359,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [claim]
+
+    note over H,A: Data Preparation
+    A ->> A: Map [data]
+    A ->> A: Retrieve [evidence]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [verdict]
+    alt Override
+        H ->> A: Correct [decision]
+        A ->> A: Revise [pipeline]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Show [visualization]",,Visualization,,Presenter,Decision,,Vis,Medium,Medium,Low,One-shot,Low,High,general user,The system visualizes data evidence.
+43,LEVA: Using Large Language Models to Enhance Visual Analytics,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3368060,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Request [onboarding]
+
+    note over H,A: Data Preparation
+    A ->> H: Explain [visualization & relationships]
+    A ->> A: Analyze [system status & data]
+
+    note over H,A: Visualization
+    H ->> H: Explore [data]
+    A ->> H: Recommend [insights as annotations]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Request [summarization]
+    A ->> H: Generate [report with visuals & text]",,Goal Setting,"Evaluator, Refiner",Refiner,Sequential,Text,Text,Medium,Medium,Low,One-shot,High,Low,novice/general,The user requests onboarding.
+43,LEVA: Using Large Language Models to Enhance Visual Analytics,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3368060,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Request [onboarding]
+
+    note over H,A: Data Preparation
+    A ->> H: Explain [visualization & relationships]
+    A ->> A: Analyze [system status & data]
+
+    note over H,A: Visualization
+    H ->> H: Explore [data]
+    A ->> H: Recommend [insights as annotations]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Request [summarization]
+    A ->> H: Generate [report with visuals & text]",,Data Preparation,,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,novice/general,The system explains visualizations and relations and analyzes data.
+43,LEVA: Using Large Language Models to Enhance Visual Analytics,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3368060,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Request [onboarding]
+
+    note over H,A: Data Preparation
+    A ->> H: Explain [visualization & relationships]
+    A ->> A: Analyze [system status & data]
+
+    note over H,A: Visualization
+    H ->> H: Explore [data]
+    A ->> H: Recommend [insights as annotations]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Request [summarization]
+    A ->> H: Generate [report with visuals & text]",,Visualization,Explorer,Recommender,Sequential,,Vis Text,Medium,Medium,Low,One-shot,Low,High,novice/general,The system recommends insights and annotates them in visualizations.
+43,LEVA: Using Large Language Models to Enhance Visual Analytics,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3368060,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Request [onboarding]
+
+    note over H,A: Data Preparation
+    A ->> H: Explain [visualization & relationships]
+    A ->> A: Analyze [system status & data]
+
+    note over H,A: Visualization
+    H ->> H: Explore [data]
+    A ->> H: Recommend [insights as annotations]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Request [summarization]
+    A ->> H: Generate [report with visuals & text]",,Insight Synthesis,Refiner,Refiner,Sequential,Vis Text,Text,Medium,High,Low,One-shot,High,High,novice/general,"The user requests summaries, the system generates reports combining text and visualization."
+44,Supporting Guided Exploratory Visual Analysis on Time Series Data with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2023.3327200,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [insight]
+    A ->> H: Recommend [sequence]
+
+    note over H,A: Visualization
+    H ->> A: View [chart]
+
+    note over H,A: Insight Synthesis
+    alt Modify
+        H ->> A: Edit [step]
+        A ->> H: Update [sequence]
+    else Accept
+        H ->> A: Continue [exploration]
+    end",,Goal Setting,Updater,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user uploads time series datasets.
+44,Supporting Guided Exploratory Visual Analysis on Time Series Data with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2023.3327200,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [insight]
+    A ->> H: Recommend [sequence]
+
+    note over H,A: Visualization
+    H ->> A: View [chart]
+
+    note over H,A: Insight Synthesis
+    alt Modify
+        H ->> A: Edit [step]
+        A ->> H: Update [sequence]
+    else Accept
+        H ->> A: Continue [exploration]
+    end",,Data Preparation,,"Interpreter, Recommender",Sequential,,Text Vis,High,Medium,Low,One-shot,Medium,Medium,domain expert,The AI extracts insights and recommends EVA sequences.
+44,Supporting Guided Exploratory Visual Analysis on Time Series Data with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2023.3327200,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [insight]
+    A ->> H: Recommend [sequence]
+
+    note over H,A: Visualization
+    H ->> A: View [chart]
+
+    note over H,A: Insight Synthesis
+    alt Modify
+        H ->> A: Edit [step]
+        A ->> H: Update [sequence]
+    else Accept
+        H ->> A: Continue [exploration]
+    end",,Visualization,Explorer,,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The system generates annotated charts.
+44,Supporting Guided Exploratory Visual Analysis on Time Series Data with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2023.3327200,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [dataset]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [insight]
+    A ->> H: Recommend [sequence]
+
+    note over H,A: Visualization
+    H ->> A: View [chart]
+
+    note over H,A: Insight Synthesis
+    alt Modify
+        H ->> A: Edit [step]
+        A ->> H: Update [sequence]
+    else Accept
+        H ->> A: Continue [exploration]
+    end",,Insight Synthesis,"Refiner, Selector",Refiner,Decision,Vis,,Medium,High,High,One-shot,High,High,domain expert,"The user modifies or accepts recommended steps, the system updates exploration sequences."
+45,ArticulatePro: A Comparative Study on a Proactive and Non-Proactive Assistant in a Climate Data Exploration Task,2024,CHI,http://arxiv.org/abs/2409.10797,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Conversation
+        H ->> H: Discuss [data exploration ideas]
+        A ->> A: Continuously listen [context]
+    end
+
+    note over H,A: Visualization
+    opt Detect [opportunity]
+        A ->> H: Generate [relevant visualization proactively]
+    end
+    H ->> A: Request [new or modified visualization]
+    A ->> H: Respond [visualization]
+
+    note over H,A: Insight Synthesis
+    H ->> H: Interpret [charts]",,Goal Setting,Demonstrator,,Parallel,Speech,,Medium,Medium,Low,Continuous,High,Low,domain expert,"The user discusses exploration intents in dialogue, the AI continuously listens."
+45,ArticulatePro: A Comparative Study on a Proactive and Non-Proactive Assistant in a Climate Data Exploration Task,2024,CHI,http://arxiv.org/abs/2409.10797,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Conversation
+        H ->> H: Discuss [data exploration ideas]
+        A ->> A: Continuously listen [context]
+    end
+
+    note over H,A: Visualization
+    opt Detect [opportunity]
+        A ->> H: Generate [relevant visualization proactively]
+    end
+    H ->> A: Request [new or modified visualization]
+    A ->> H: Respond [visualization]
+
+    note over H,A: Insight Synthesis
+    H ->> H: Interpret [charts]",,Visualization,,"Generator, Presenter",Decision,Widget Speech,Vis,Medium,Medium,High,One-shot,Low,High,domain expert,"The AI proactively generates charts, the user requests modifications or additions."
+45,ArticulatePro: A Comparative Study on a Proactive and Non-Proactive Assistant in a Climate Data Exploration Task,2024,CHI,http://arxiv.org/abs/2409.10797,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par Conversation
+        H ->> H: Discuss [data exploration ideas]
+        A ->> A: Continuously listen [context]
+    end
+
+    note over H,A: Visualization
+    opt Detect [opportunity]
+        A ->> H: Generate [relevant visualization proactively]
+    end
+    H ->> A: Request [new or modified visualization]
+    A ->> H: Respond [visualization]
+
+    note over H,A: Insight Synthesis
+    H ->> H: Interpret [charts]",,Insight Synthesis,Evaluator,,Sequential,Vis,,Medium,High,Low,One-shot,High,High,domain expert,The user interprets charts and co-explores with AI.
+46,InsigHTable: Insight-driven Hierarchical Table Visualization with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3404454,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [table]
+
+    note over H,A: Data Preparation
+    A ->> A: Extract [features]
+    A ->> A: Plan [actions]
+
+    note over H,A: Visualization
+    par Two-Stage Process
+        A ->> A: Transform [structure]
+        A ->> A: Select [block]
+        A ->> A: Embed [visualization]
+    end
+    A ->> H: Show [result]
+
+    note over H,A: Insight Synthesis
+    alt Feedback
+        H ->> A: Accept [feedback]
+    else
+        H ->> A: Reject [feedback]
+    end
+    A ->> A: Update [policy]",,Goal Setting,Updater,,Sequential,Widget,,Medium,Medium,Low,One-shot,High,Low,general user,The user uploads hierarchical tables.
+46,InsigHTable: Insight-driven Hierarchical Table Visualization with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3404454,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [table]
+
+    note over H,A: Data Preparation
+    A ->> A: Extract [features]
+    A ->> A: Plan [actions]
+
+    note over H,A: Visualization
+    par Two-Stage Process
+        A ->> A: Transform [structure]
+        A ->> A: Select [block]
+        A ->> A: Embed [visualization]
+    end
+    A ->> H: Show [result]
+
+    note over H,A: Insight Synthesis
+    alt Feedback
+        H ->> A: Accept [feedback]
+    else
+        H ->> A: Reject [feedback]
+    end
+    A ->> A: Update [policy]",,Data Preparation,,"Executor, Interpreter",Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,general user,The AI extracts features and plans actions.
+46,InsigHTable: Insight-driven Hierarchical Table Visualization with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3404454,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [table]
+
+    note over H,A: Data Preparation
+    A ->> A: Extract [features]
+    A ->> A: Plan [actions]
+
+    note over H,A: Visualization
+    par Two-Stage Process
+        A ->> A: Transform [structure]
+        A ->> A: Select [block]
+        A ->> A: Embed [visualization]
+    end
+    A ->> H: Show [result]
+
+    note over H,A: Insight Synthesis
+    alt Feedback
+        H ->> A: Accept [feedback]
+    else
+        H ->> A: Reject [feedback]
+    end
+    A ->> A: Update [policy]",,Visualization,,"Generator, Presenter",Parallel,,Vis,Medium,Medium,Low,Continuous,Low,High,general user,The system embeds visualizations and presents results.
+46,InsigHTable: Insight-driven Hierarchical Table Visualization with Reinforcement Learning,2024,TVCG,https://doi.org/10.1109/TVCG.2024.3404454,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Upload [table]
+
+    note over H,A: Data Preparation
+    A ->> A: Extract [features]
+    A ->> A: Plan [actions]
+
+    note over H,A: Visualization
+    par Two-Stage Process
+        A ->> A: Transform [structure]
+        A ->> A: Select [block]
+        A ->> A: Embed [visualization]
+    end
+    A ->> H: Show [result]
+
+    note over H,A: Insight Synthesis
+    alt Feedback
+        H ->> A: Accept [feedback]
+    else
+        H ->> A: Reject [feedback]
+    end
+    A ->> A: Update [policy]",,Insight Synthesis,Evaluator,Refiner,Decision,Vis,,Medium,High,High,One-shot,High,High,general user,"The user accepts or rejects feedback, the AI updates strategies."
+47,Stile: Exploring and Debugging Social Biases in Pre-trained Text Representations,2024,CHI,https://dl.acm.org/doi/10.1145/3613904.3642111,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Define [domain]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [bias]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [overview]
+    H ->> A: Inspect [bias]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Highlight [context]
+    opt Debugging
+        H ->> A: Modify [lens]
+        A ->> H: Recompute [bias]
+    end",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user defines analytic domains or themes.
+47,Stile: Exploring and Debugging Social Biases in Pre-trained Text Representations,2024,CHI,https://dl.acm.org/doi/10.1145/3613904.3642111,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Define [domain]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [bias]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [overview]
+    H ->> A: Inspect [bias]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Highlight [context]
+    opt Debugging
+        H ->> A: Modify [lens]
+        A ->> H: Recompute [bias]
+    end",,Data Preparation,,Analyzer,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,domain expert,The AI computes bias.
+47,Stile: Exploring and Debugging Social Biases in Pre-trained Text Representations,2024,CHI,https://dl.acm.org/doi/10.1145/3613904.3642111,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Define [domain]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [bias]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [overview]
+    H ->> A: Inspect [bias]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Highlight [context]
+    opt Debugging
+        H ->> A: Modify [lens]
+        A ->> H: Recompute [bias]
+    end",,Visualization,Explorer,Generator,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,"The AI presents bias overviews, the user inspects details."
+47,Stile: Exploring and Debugging Social Biases in Pre-trained Text Representations,2024,CHI,https://dl.acm.org/doi/10.1145/3613904.3642111,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Define [domain]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [bias]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [overview]
+    H ->> A: Inspect [bias]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Highlight [context]
+    opt Debugging
+        H ->> A: Modify [lens]
+        A ->> H: Recompute [bias]
+    end",,Insight Synthesis,Refiner,Refiner,Repetitive,Vis,Text,Medium,High,Medium,Continuous,High,High,domain expert,"The user modifies lenses, the AI recalculates bias."
+48,Interpreting High-Dimensional Projections With Capacity,2024,TVCG,https://ieeexplore.ieee.org/document/10313136/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [capacity]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [distortion]
+    H ->> A: Explore [distribution]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Recommend [adjustment]
+    H ->> A: Modify [projection]
+    A ->> H: Update [view]",,Goal Setting,Selector,,Sequential,Widget,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user selects data for dimensionality reduction.
+48,Interpreting High-Dimensional Projections With Capacity,2024,TVCG,https://ieeexplore.ieee.org/document/10313136/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [capacity]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [distortion]
+    H ->> A: Explore [distribution]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Recommend [adjustment]
+    H ->> A: Modify [projection]
+    A ->> H: Update [view]",,Data Preparation,,Analyzer,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,domain expert,The AI computes capacity metrics.
+48,Interpreting High-Dimensional Projections With Capacity,2024,TVCG,https://ieeexplore.ieee.org/document/10313136/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [capacity]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [distortion]
+    H ->> A: Explore [distribution]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Recommend [adjustment]
+    H ->> A: Modify [projection]
+    A ->> H: Update [view]",,Visualization,Explorer,Generator,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,"The AI presents projection distortion, the user explores."
+48,Interpreting High-Dimensional Projections With Capacity,2024,TVCG,https://ieeexplore.ieee.org/document/10313136/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Compute [capacity]
+
+    note over H,A: Visualization
+    A ->> H: Visualize [distortion]
+    H ->> A: Explore [distribution]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Recommend [adjustment]
+    H ->> A: Modify [projection]
+    A ->> H: Update [view]",,Insight Synthesis,Refiner,"Recommender, Refiner",Repetitive,Vis,,Medium,High,Medium,Continuous,High,High,domain expert,"The AI recommends adjustments, the user modifies projections."
+49,SpectrumVA: Visual Analysis of Astronomical Spectra for Facilitating Classification Inspection,2024,TVCG,https://ieeexplore.ieee.org/document/10183376/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [spectrum]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [redshift]
+
+    note over H,A: Visualization
+    H ->> A: Adjust [lines]
+    A ->> H: Provide [feedback]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Confirm [class]
+    A ->> H: Recommend [similar]",,Goal Setting,Selector,,Sequential,Widget,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user selects interesting spectra.
+49,SpectrumVA: Visual Analysis of Astronomical Spectra for Facilitating Classification Inspection,2024,TVCG,https://ieeexplore.ieee.org/document/10183376/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [spectrum]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [redshift]
+
+    note over H,A: Visualization
+    H ->> A: Adjust [lines]
+    A ->> H: Provide [feedback]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Confirm [class]
+    A ->> H: Recommend [similar]",,Data Preparation,,Recommender,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,domain expert,The AI recommends candidate redshifts.
+49,SpectrumVA: Visual Analysis of Astronomical Spectra for Facilitating Classification Inspection,2024,TVCG,https://ieeexplore.ieee.org/document/10183376/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [spectrum]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [redshift]
+
+    note over H,A: Visualization
+    H ->> A: Adjust [lines]
+    A ->> H: Provide [feedback]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Confirm [class]
+    A ->> H: Recommend [similar]",,Visualization,Updater,Updater,Repetitive,Vis,,Medium,Medium,Medium,Continuous,Low,High,domain expert,"The user adjusts spectral lines, the AI provides feedback."
+49,SpectrumVA: Visual Analysis of Astronomical Spectra for Facilitating Classification Inspection,2024,TVCG,https://ieeexplore.ieee.org/document/10183376/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [spectrum]
+
+    note over H,A: Data Preparation
+    A ->> H: Suggest [redshift]
+
+    note over H,A: Visualization
+    H ->> A: Adjust [lines]
+    A ->> H: Provide [feedback]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Confirm [class]
+    A ->> H: Recommend [similar]",,Insight Synthesis,Evaluator,Recommender,Sequential,Vis,,Medium,High,Low,One-shot,High,High,domain expert,"The user confirms classifications, the AI recommends similar spectra."
+50,TopicRefiner: Coherence-Guided Steerable LDA for Visual Topic Enhancement,2024,TVCG,https://ieeexplore.ieee.org/document/10102323/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [topics]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [output]
+
+    note over H,A: Visualization
+    H ->> A: Refine [term]
+    A ->> H: Recommend [term]
+    H ->> A: Edit [document]
+    A ->> H: Update [coherence]
+
+    note over H,A: Insight Synthesis
+    opt TopicOps
+        H ->> A: Merge [topic]
+        H ->> A: Split [topic]
+        A ->> H: Adjust [result]
+    end",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user sets the number of topics.
+50,TopicRefiner: Coherence-Guided Steerable LDA for Visual Topic Enhancement,2024,TVCG,https://ieeexplore.ieee.org/document/10102323/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [topics]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [output]
+
+    note over H,A: Visualization
+    H ->> A: Refine [term]
+    A ->> H: Recommend [term]
+    H ->> A: Edit [document]
+    A ->> H: Update [coherence]
+
+    note over H,A: Insight Synthesis
+    opt TopicOps
+        H ->> A: Merge [topic]
+        H ->> A: Split [topic]
+        A ->> H: Adjust [result]
+    end",,Data Preparation,,Interpreter,Sequential,,Text,High,Medium,Low,One-shot,Medium,Medium,domain expert,The AI extracts initial topics.
+50,TopicRefiner: Coherence-Guided Steerable LDA for Visual Topic Enhancement,2024,TVCG,https://ieeexplore.ieee.org/document/10102323/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [topics]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [output]
+
+    note over H,A: Visualization
+    H ->> A: Refine [term]
+    A ->> H: Recommend [term]
+    H ->> A: Edit [document]
+    A ->> H: Update [coherence]
+
+    note over H,A: Insight Synthesis
+    opt TopicOps
+        H ->> A: Merge [topic]
+        H ->> A: Split [topic]
+        A ->> H: Adjust [result]
+    end",,Visualization,Updater,"Recommender, Updater",Repetitive,,Vis Text,Medium,Medium,Medium,Continuous,Low,High,domain expert,"The user modifies terms, the AI recommends alternatives and updates coherence."
+50,TopicRefiner: Coherence-Guided Steerable LDA for Visual Topic Enhancement,2024,TVCG,https://ieeexplore.ieee.org/document/10102323/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [topics]
+
+    note over H,A: Data Preparation
+    A ->> H: Extract [output]
+
+    note over H,A: Visualization
+    H ->> A: Refine [term]
+    A ->> H: Recommend [term]
+    H ->> A: Edit [document]
+    A ->> H: Update [coherence]
+
+    note over H,A: Insight Synthesis
+    opt TopicOps
+        H ->> A: Merge [topic]
+        H ->> A: Split [topic]
+        A ->> H: Adjust [result]
+    end",,Insight Synthesis,Selector,Refiner,Sequential,Text,Vis,Medium,High,Low,One-shot,High,High,domain expert,"The user merges or splits topics, the AI adjusts results."
+51,Concept Induction: Analyzing Unstructured Text with High-Level Concepts Using LLooM,2024,CHI,https://doi.org/10.1145/3613904.3642830,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]  
+    A ->> A: Generate [concept]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [concept]  
+    opt Steering
+        H ->> A: Refine [concept]  
+        A ->> H: Update [concept]  
+    end
+    H ->> A: Apply [criteria]  
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concept]",,Data Preparation,Executor,Analyzer,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,"The user provides data, the AI generates high-level concepts."
+51,Concept Induction: Analyzing Unstructured Text with High-Level Concepts Using LLooM,2024,CHI,https://doi.org/10.1145/3613904.3642830,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]  
+    A ->> A: Generate [concept]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [concept]  
+    opt Steering
+        H ->> A: Refine [concept]  
+        A ->> H: Update [concept]  
+    end
+    H ->> A: Apply [criteria]  
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concept]",,Visualization,"Refiner, Selector","Producer, Refiner",Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The AI visualizes concept distributions.
+51,Concept Induction: Analyzing Unstructured Text with High-Level Concepts Using LLooM,2024,CHI,https://doi.org/10.1145/3613904.3642830,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [data]  
+    A ->> A: Generate [concept]  
+
+    note over H,A: Insight Synthesis
+    A ->> H: Present [concept]  
+    opt Steering
+        H ->> A: Refine [concept]  
+        A ->> H: Update [concept]  
+    end
+    H ->> A: Apply [criteria]  
+
+    note over H,A: Visualization
+    A ->> H: Visualize [concept]",,Insight Synthesis,,Generator,Repetitive,Text,,Medium,High,Medium,Continuous,High,High,domain expert,"The user refines or modifies concepts, the AI updates and presents them."
+52,CoInsight: Visual Storytelling for Hierarchical Tables With Connected Insights,2024,TVCG,https://ieeexplore.ieee.org/document/10499832/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [table]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Extract [insight]
+    A ->> H: Construct [graph]
+    H ->> A: Explore [relations]
+    A ->> H: Recommend [story]
+    opt Refine
+        H ->> A: Adjust [narrative]
+        A ->> H: Update [story]
+    end",,Data Preparation,Executor,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,general user,The user provides hierarchical tables.
+52,CoInsight: Visual Storytelling for Hierarchical Tables With Connected Insights,2024,TVCG,https://ieeexplore.ieee.org/document/10499832/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [table]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Extract [insight]
+    A ->> H: Construct [graph]
+    H ->> A: Explore [relations]
+    A ->> H: Recommend [story]
+    opt Refine
+        H ->> A: Adjust [narrative]
+        A ->> H: Update [story]
+    end",,Insight Synthesis,Refiner,"Producer, Recommender, Refiner",Repetitive,,Text Vis,Medium,High,Medium,Continuous,High,High,general user,"The AI extracts insights and generates relationship graphs, the user explores and adjusts narratives."
+53,Improving Steering and Verification in AI-Assisted Data Analysis with Interactive Task DecompositionImproving Steering and Verification in AI-Assisted Data Analysis with Interactive Task Decomposition,2024,UIST,https://arxiv.org/pdf/2407.02651?,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [analysis task]
+
+    note over H,A: Data Preparation
+    alt Conversational
+        A ->> H: Provide [full solution]
+        H ->> A: Send [follow-up prompts]
+    else Stepwise
+        A ->> H: Present [editable assumptions + code per step]
+        H ->> A: Modify [assumptions or code]
+        A ->> H: Generate [next step output]
+    else Phasewise
+        A ->> H: Present [assumptions, execution plan, code]
+        H ->> A: Edit [any phase]
+        A ->> H: Update [solution accordingly]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> A: Verify [results, correctness]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,general user,The user submits analytic tasks.
+53,Improving Steering and Verification in AI-Assisted Data Analysis with Interactive Task DecompositionImproving Steering and Verification in AI-Assisted Data Analysis with Interactive Task Decomposition,2024,UIST,https://arxiv.org/pdf/2407.02651?,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [analysis task]
+
+    note over H,A: Data Preparation
+    alt Conversational
+        A ->> H: Provide [full solution]
+        H ->> A: Send [follow-up prompts]
+    else Stepwise
+        A ->> H: Present [editable assumptions + code per step]
+        H ->> A: Modify [assumptions or code]
+        A ->> H: Generate [next step output]
+    else Phasewise
+        A ->> H: Present [assumptions, execution plan, code]
+        H ->> A: Edit [any phase]
+        A ->> H: Update [solution accordingly]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> A: Verify [results, correctness]",,Data Preparation,"Recommender, Transformer","Analyzer, Executor, Recommender",Decision,,Code,High,Medium,High,One-shot,Medium,Medium,general user,The AI outputs hypotheses and code stepwise or in phases through conversation.
+53,Improving Steering and Verification in AI-Assisted Data Analysis with Interactive Task DecompositionImproving Steering and Verification in AI-Assisted Data Analysis with Interactive Task Decomposition,2024,UIST,https://arxiv.org/pdf/2407.02651?,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Submit [analysis task]
+
+    note over H,A: Data Preparation
+    alt Conversational
+        A ->> H: Provide [full solution]
+        H ->> A: Send [follow-up prompts]
+    else Stepwise
+        A ->> H: Present [editable assumptions + code per step]
+        H ->> A: Modify [assumptions or code]
+        A ->> H: Generate [next step output]
+    else Phasewise
+        A ->> H: Present [assumptions, execution plan, code]
+        H ->> A: Edit [any phase]
+        A ->> H: Update [solution accordingly]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> A: Verify [results, correctness]",,Insight Synthesis,,Evaluator,Decision,Code,,Medium,High,High,One-shot,High,High,general user,The user inspects and modifies results.
+54,InsightLens: Augmenting LLM-Powered Data Analysis with Interactive Insight Management and Navigation,2025,TVCG,https://doi.org/10.48550/arXiv.2404.01644,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ask [query]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Produce [insight]  
+    A ->> H: Present [insight]  
+    A ->> H: Record [insight]  
+    A ->> H: Organize [context]  
+
+    opt Navigation
+        H ->> A: Select [insight]  
+        A ->> H: Display [detail]  
+    end",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,novice/general,The user raises queries.
+54,InsightLens: Augmenting LLM-Powered Data Analysis with Interactive Insight Management and Navigation,2025,TVCG,https://doi.org/10.48550/arXiv.2404.01644,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Ask [query]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Produce [insight]  
+    A ->> H: Present [insight]  
+    A ->> H: Record [insight]  
+    A ->> H: Organize [context]  
+
+    opt Navigation
+        H ->> A: Select [insight]  
+        A ->> H: Display [detail]  
+    end",,Insight Synthesis,Selector,Producer,Repetitive,,Text Vis,Medium,High,Medium,Continuous,High,High,novice/general,"The AI generates and organizes insights, the user navigates and views details."
+55,GistVis: Automatic Generation of Word-scale Visualizations from Data-rich Documents,2025,CHI,https://dl.acm.org/doi/10.1145/3706598.3713881,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [document]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Discover [insight]
+    A ->> A: Annotate [context]
+    A ->> A: Extract [fact]
+
+    note over H,A: Visualization
+    A ->> A: Visualize [snippet]
+    A ->> H: Embed [visualization]
+    opt Interaction
+        H ->> A: Hover [entity]
+        A ->> H: Show [tooltip]
+    end",,Data Preparation,Executor,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,novice/general,The user provides documents as system input.
+55,GistVis: Automatic Generation of Word-scale Visualizations from Data-rich Documents,2025,CHI,https://dl.acm.org/doi/10.1145/3706598.3713881,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [document]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Discover [insight]
+    A ->> A: Annotate [context]
+    A ->> A: Extract [fact]
+
+    note over H,A: Visualization
+    A ->> A: Visualize [snippet]
+    A ->> H: Embed [visualization]
+    opt Interaction
+        H ->> A: Hover [entity]
+        A ->> H: Show [tooltip]
+    end",,Insight Synthesis,,Recommender,Repetitive,,Text,Medium,High,Medium,Continuous,High,High,novice/general,"The system discovers and extracts data facts, processing pure text."
+55,GistVis: Automatic Generation of Word-scale Visualizations from Data-rich Documents,2025,CHI,https://dl.acm.org/doi/10.1145/3706598.3713881,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Data Preparation
+    H ->> A: Provide [document]
+
+    note over H,A: Insight Synthesis
+    A ->> A: Discover [insight]
+    A ->> A: Annotate [context]
+    A ->> A: Extract [fact]
+
+    note over H,A: Visualization
+    A ->> A: Visualize [snippet]
+    A ->> H: Embed [visualization]
+    opt Interaction
+        H ->> A: Hover [entity]
+        A ->> H: Show [tooltip]
+    end",,Visualization,Explorer,"Generator, Presenter",Sequential,,Vis Widget,Medium,Medium,Low,One-shot,Low,High,novice/general,"The system generates word-level visualizations and embeds them in documents, viewable via hover."
+56,Divisi: Interactive Search and Visualization for Scalable Exploratory Subgroup Analysis,2025,CHI,https://dl.acm.org/doi/pdf/10.1145/3706598.3713103,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Discover [subgroup]
+
+    note over H,A: Visualization
+    A ->> H: Show [ranking]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Re-rank [criteria]
+    H ->> A: Edit [definition]
+    A ->> H: Update [metrics]
+    A ->> H: Map [overlap]
+    H ->> A: Curate [subgroup]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user sets subgroup analysis goals.
+56,Divisi: Interactive Search and Visualization for Scalable Exploratory Subgroup Analysis,2025,CHI,https://dl.acm.org/doi/pdf/10.1145/3706598.3713103,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Discover [subgroup]
+
+    note over H,A: Visualization
+    A ->> H: Show [ranking]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Re-rank [criteria]
+    H ->> A: Edit [definition]
+    A ->> H: Update [metrics]
+    A ->> H: Map [overlap]
+    H ->> A: Curate [subgroup]",,Data Preparation,,Analyzer,Sequential,,Text Vis,High,Medium,Low,One-shot,Medium,Medium,domain expert,The AI discovers candidate subgroups and outputs metrics.
+56,Divisi: Interactive Search and Visualization for Scalable Exploratory Subgroup Analysis,2025,CHI,https://dl.acm.org/doi/pdf/10.1145/3706598.3713103,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Discover [subgroup]
+
+    note over H,A: Visualization
+    A ->> H: Show [ranking]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Re-rank [criteria]
+    H ->> A: Edit [definition]
+    A ->> H: Update [metrics]
+    A ->> H: Map [overlap]
+    H ->> A: Curate [subgroup]",,Visualization,,Presenter,Sequential,,Vis,Medium,Medium,Low,One-shot,Low,High,domain expert,The system presents rankings and subgroup coverage charts.
+56,Divisi: Interactive Search and Visualization for Scalable Exploratory Subgroup Analysis,2025,CHI,https://dl.acm.org/doi/pdf/10.1145/3706598.3713103,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Set [goal]
+
+    note over H,A: Data Preparation
+    A ->> A: Discover [subgroup]
+
+    note over H,A: Visualization
+    A ->> H: Show [ranking]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Re-rank [criteria]
+    H ->> A: Edit [definition]
+    A ->> H: Update [metrics]
+    A ->> H: Map [overlap]
+    H ->> A: Curate [subgroup]",,Insight Synthesis,"Refiner, Selector",Refiner,Repetitive,Text,Vis,Medium,High,Medium,Continuous,High,High,domain expert,"The user reorders or edits subgroup definitions, the AI updates metrics and visual maps."
+57,Dango: A Mixed-Initiative Data Wrangling System using Large Language Model,2025,CHI,https://dl.acm.org/doi/pdf/10.1145/3706598.3714135,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [actions]
+    H ->> A: Describe [intent in NL]
+
+    note over H,A: Data Preparation
+    alt Ambiguity Detected
+        A ->> H: Ask [clarification questions]
+        H ->> A: Answer [choices]
+    end
+    A ->> A: Synthesize [wrangling script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [step-by-step in NL]
+    opt Error Detected
+        H ->> A: Edit [NL explanation]
+        A ->> A: Update [script]
+    end
+    H ->> H: Validate [results]",,Goal Setting,Demonstrator,,Sequential,Text Widget,,Medium,Medium,Low,One-shot,High,Low,general user,The user describes intents in natural language or demonstrates actions.
+57,Dango: A Mixed-Initiative Data Wrangling System using Large Language Model,2025,CHI,https://dl.acm.org/doi/pdf/10.1145/3706598.3714135,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [actions]
+    H ->> A: Describe [intent in NL]
+
+    note over H,A: Data Preparation
+    alt Ambiguity Detected
+        A ->> H: Ask [clarification questions]
+        H ->> A: Answer [choices]
+    end
+    A ->> A: Synthesize [wrangling script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [step-by-step in NL]
+    opt Error Detected
+        H ->> A: Edit [NL explanation]
+        A ->> A: Update [script]
+    end
+    H ->> H: Validate [results]",,Data Preparation,Recommender,Analyzer,Decision,Text Widget,,High,Medium,High,One-shot,Medium,Medium,general user,"The system asks clarifying questions, the user selects answers."
+57,Dango: A Mixed-Initiative Data Wrangling System using Large Language Model,2025,CHI,https://dl.acm.org/doi/pdf/10.1145/3706598.3714135,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Demonstrate [actions]
+    H ->> A: Describe [intent in NL]
+
+    note over H,A: Data Preparation
+    alt Ambiguity Detected
+        A ->> H: Ask [clarification questions]
+        H ->> A: Answer [choices]
+    end
+    A ->> A: Synthesize [wrangling script]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [step-by-step in NL]
+    opt Error Detected
+        H ->> A: Edit [NL explanation]
+        A ->> A: Update [script]
+    end
+    H ->> H: Validate [results]",,Insight Synthesis,"Evaluator, Refiner","Recommender, Refiner",Repetitive,Text,Text Code,Medium,High,Medium,Continuous,High,High,general user,"The system explains scripts stepwise in natural language, the user edits text corrections."
+58,Pluto: Authoring Semantically Aligned Text and Charts for Data-Driven Communication,2025,IUI,https://dl.acm.org/doi/pdf/10.1145/3708359.3712122,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Draft [text]
+    A ->> H: Suggest [completion]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [region]
+    A ->> H: Generate [sentence]
+
+    note over H,A: Visualization
+    H ->> A: Write [description]
+    A ->> H: Suggest [annotation]
+
+    note over H,A: Insight Synthesis
+    alt Text-driven
+        H ->> A: Provide [instruction]
+        A ->> H: Adjust [chart]
+    else Chart-driven
+        H ->> A: Modify [chart]
+        A ->> H: Suggest [text]
+    end",,Goal Setting,Demonstrator,Recommender,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,general user,"The user drafts text, the system suggests completions."
+58,Pluto: Authoring Semantically Aligned Text and Charts for Data-Driven Communication,2025,IUI,https://dl.acm.org/doi/pdf/10.1145/3708359.3712122,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Draft [text]
+    A ->> H: Suggest [completion]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [region]
+    A ->> H: Generate [sentence]
+
+    note over H,A: Visualization
+    H ->> A: Write [description]
+    A ->> H: Suggest [annotation]
+
+    note over H,A: Insight Synthesis
+    alt Text-driven
+        H ->> A: Provide [instruction]
+        A ->> H: Adjust [chart]
+    else Chart-driven
+        H ->> A: Modify [chart]
+        A ->> H: Suggest [text]
+    end",,Data Preparation,,Analyzer,Sequential,Text,Vis,High,Medium,Low,One-shot,Medium,Medium,general user,"The user selects regions, the system generates sentences."
+58,Pluto: Authoring Semantically Aligned Text and Charts for Data-Driven Communication,2025,IUI,https://dl.acm.org/doi/pdf/10.1145/3708359.3712122,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Draft [text]
+    A ->> H: Suggest [completion]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [region]
+    A ->> H: Generate [sentence]
+
+    note over H,A: Visualization
+    H ->> A: Write [description]
+    A ->> H: Suggest [annotation]
+
+    note over H,A: Insight Synthesis
+    alt Text-driven
+        H ->> A: Provide [instruction]
+        A ->> H: Adjust [chart]
+    else Chart-driven
+        H ->> A: Modify [chart]
+        A ->> H: Suggest [text]
+    end",,Visualization,Updater,Recommender,Sequential,Text,Vis,Medium,Medium,Low,One-shot,Low,High,general user,"The user writes descriptions, the system suggests annotations or chart adjustments."
+58,Pluto: Authoring Semantically Aligned Text and Charts for Data-Driven Communication,2025,IUI,https://dl.acm.org/doi/pdf/10.1145/3708359.3712122,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Draft [text]
+    A ->> H: Suggest [completion]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [region]
+    A ->> H: Generate [sentence]
+
+    note over H,A: Visualization
+    H ->> A: Write [description]
+    A ->> H: Suggest [annotation]
+
+    note over H,A: Insight Synthesis
+    alt Text-driven
+        H ->> A: Provide [instruction]
+        A ->> H: Adjust [chart]
+    else Chart-driven
+        H ->> A: Modify [chart]
+        A ->> H: Suggest [text]
+    end",,Insight Synthesis,"Refiner, Selector","Recommender, Refiner",Decision,Text,Vis,Medium,High,High,One-shot,High,High,general user,"The interaction is led by people or charts, the system switches suggestions between modalities."
+59,Linking Text and Visualizations via Contextual Knowledge Graph,2025,TVCG,https://ieeexplore.ieee.org/document/10553360/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [chart]
+    H ->> A: Provide [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [graph]
+    A ->> H: Extract [mentions]
+    opt Revise
+        H ->> A: Correct [mentions]
+        A ->> H: Update [mapping]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Group [references]
+    opt Regroup
+        H ->> A: Adjust [references]
+        A ->> H: Remap [entities]
+    end
+    A ->> H: Apply [styles]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Refine [links]",,Goal Setting,Specifier,,Sequential,Text Vis,,Medium,Medium,Low,One-shot,High,Low,general user,The user specifies text and charts.
+59,Linking Text and Visualizations via Contextual Knowledge Graph,2025,TVCG,https://ieeexplore.ieee.org/document/10553360/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [chart]
+    H ->> A: Provide [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [graph]
+    A ->> H: Extract [mentions]
+    opt Revise
+        H ->> A: Correct [mentions]
+        A ->> H: Update [mapping]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Group [references]
+    opt Regroup
+        H ->> A: Adjust [references]
+        A ->> H: Remap [entities]
+    end
+    A ->> H: Apply [styles]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Refine [links]",,Data Preparation,Transformer,"Analyzer, Executor, Interpreter",Repetitive,Text Vis,,High,Medium,Medium,Continuous,Medium,Medium,general user,"The AI builds knowledge graphs and extracts mentions, the user corrects."
+59,Linking Text and Visualizations via Contextual Knowledge Graph,2025,TVCG,https://ieeexplore.ieee.org/document/10553360/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [chart]
+    H ->> A: Provide [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [graph]
+    A ->> H: Extract [mentions]
+    opt Revise
+        H ->> A: Correct [mentions]
+        A ->> H: Update [mapping]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Group [references]
+    opt Regroup
+        H ->> A: Adjust [references]
+        A ->> H: Remap [entities]
+    end
+    A ->> H: Apply [styles]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Refine [links]",,Visualization,Updater,Updater,Repetitive,,Vis,Medium,Medium,Medium,Continuous,Low,High,general user,"The AI groups text and graphical references, the user adjusts."
+59,Linking Text and Visualizations via Contextual Knowledge Graph,2025,TVCG,https://ieeexplore.ieee.org/document/10553360/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Specify [chart]
+    H ->> A: Provide [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Generate [graph]
+    A ->> H: Extract [mentions]
+    opt Revise
+        H ->> A: Correct [mentions]
+        A ->> H: Update [mapping]
+    end
+
+    note over H,A: Visualization
+    A ->> H: Group [references]
+    opt Regroup
+        H ->> A: Adjust [references]
+        A ->> H: Remap [entities]
+    end
+    A ->> H: Apply [styles]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Refine [links]",,Insight Synthesis,Refiner,,Repetitive,Text Vis,,Medium,High,Medium,Continuous,High,High,general user,"The user refines links, the system updates mappings."
+60,ProactiveVA: Proactive Visual Analytics with LLM-Based UI Agent,2025,TVCG,https://www.arxiv.org/pdf/2507.18165,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par User exploration
+    H ->> H: Explore [data]
+    and System monitoring
+    note over H,A: Data Preparation
+    A ->> A: Monitor [interaction logs]
+
+    note over H,A: Visualization
+    opt Confusion Detected
+        A ->> A: Infer [user need]
+        A ->> H: Suggest [guidance or reminder]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> H: Decide [accept/reject]
+    H ->> H: Continue [analysis]",,Goal Setting,Demonstrator,,Parallel,Widget Vis,Text,Medium,Medium,Low,Continuous,High,Low,novice/general,"The user explores data, the system monitors interactions."
+60,ProactiveVA: Proactive Visual Analytics with LLM-Based UI Agent,2025,TVCG,https://www.arxiv.org/pdf/2507.18165,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par User exploration
+    H ->> H: Explore [data]
+    and System monitoring
+    note over H,A: Data Preparation
+    A ->> A: Monitor [interaction logs]
+
+    note over H,A: Visualization
+    opt Confusion Detected
+        A ->> A: Infer [user need]
+        A ->> H: Suggest [guidance or reminder]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> H: Decide [accept/reject]
+    H ->> H: Continue [analysis]",,Data Preparation,,Interpreter,Parallel,,Text,High,Medium,Low,Continuous,Medium,Medium,novice/general,The AI analyzes logs and detects confusion.
+60,ProactiveVA: Proactive Visual Analytics with LLM-Based UI Agent,2025,TVCG,https://www.arxiv.org/pdf/2507.18165,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par User exploration
+    H ->> H: Explore [data]
+    and System monitoring
+    note over H,A: Data Preparation
+    A ->> A: Monitor [interaction logs]
+
+    note over H,A: Visualization
+    opt Confusion Detected
+        A ->> A: Infer [user need]
+        A ->> H: Suggest [guidance or reminder]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> H: Decide [accept/reject]
+    H ->> H: Continue [analysis]",,Visualization,Explorer,Recommender,Decision,Widget Vis,Vis Text,Medium,Medium,High,One-shot,Low,High,novice/general,"The AI proactively suggests or reminds, the user reviews in the interface."
+60,ProactiveVA: Proactive Visual Analytics with LLM-Based UI Agent,2025,TVCG,https://www.arxiv.org/pdf/2507.18165,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    par User exploration
+    H ->> H: Explore [data]
+    and System monitoring
+    note over H,A: Data Preparation
+    A ->> A: Monitor [interaction logs]
+
+    note over H,A: Visualization
+    opt Confusion Detected
+        A ->> A: Infer [user need]
+        A ->> H: Suggest [guidance or reminder]
+    end
+
+    note over H,A: Insight Synthesis
+    H ->> H: Decide [accept/reject]
+    H ->> H: Continue [analysis]",,Insight Synthesis,"Evaluator, Selector",Updater,Decision,Text,Text,Medium,High,High,One-shot,High,High,novice/general,The user accepts or rejects suggestions and continues analysis.
+61,RSVP for VPSA : A Meta Design Study on Rapid Suggestive Visualization Prototyping for Visual Parameter Space Analysis,2025,TVCG,https://ieeexplore.ieee.org/document/10679174/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Load [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [design]
+
+    note over H,A: Visualization
+    H ->> A: Select [visualization]
+    A ->> H: Generate [dashboard]
+
+    note over H,A: Insight Synthesis
+    opt Refinement
+        H ->> A: Adjust [layout]
+        A ->> H: Update [view]
+    end",,Goal Setting,Updater,,Sequential,Widget,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user loads datasets.
+61,RSVP for VPSA : A Meta Design Study on Rapid Suggestive Visualization Prototyping for Visual Parameter Space Analysis,2025,TVCG,https://ieeexplore.ieee.org/document/10679174/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Load [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [design]
+
+    note over H,A: Visualization
+    H ->> A: Select [visualization]
+    A ->> H: Generate [dashboard]
+
+    note over H,A: Insight Synthesis
+    opt Refinement
+        H ->> A: Adjust [layout]
+        A ->> H: Update [view]
+    end",,Data Preparation,,Recommender,Sequential,,Vis,High,Medium,Low,One-shot,Medium,Medium,domain expert,The AI recommends design schemes.
+61,RSVP for VPSA : A Meta Design Study on Rapid Suggestive Visualization Prototyping for Visual Parameter Space Analysis,2025,TVCG,https://ieeexplore.ieee.org/document/10679174/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Load [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [design]
+
+    note over H,A: Visualization
+    H ->> A: Select [visualization]
+    A ->> H: Generate [dashboard]
+
+    note over H,A: Insight Synthesis
+    opt Refinement
+        H ->> A: Adjust [layout]
+        A ->> H: Update [view]
+    end",,Visualization,,Generator,Sequential,Vis Widget,,Medium,Medium,Low,One-shot,Low,High,domain expert,"The user selects recommended views, the AI generates dashboards."
+61,RSVP for VPSA : A Meta Design Study on Rapid Suggestive Visualization Prototyping for Visual Parameter Space Analysis,2025,TVCG,https://ieeexplore.ieee.org/document/10679174/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Load [data]
+
+    note over H,A: Data Preparation
+    A ->> H: Recommend [design]
+
+    note over H,A: Visualization
+    H ->> A: Select [visualization]
+    A ->> H: Generate [dashboard]
+
+    note over H,A: Insight Synthesis
+    opt Refinement
+        H ->> A: Adjust [layout]
+        A ->> H: Update [view]
+    end",,Insight Synthesis,Refiner,Refiner,Repetitive,Vis,,Medium,High,Medium,Continuous,High,High,domain expert,"The user adjusts layouts, the AI updates dashboards."
+62,VisCARS: Knowledge Graph-Based Context-Aware Recommender System for Time-Series Data Visualization and Monitoring Dashboards,2025,TVCG,https://ieeexplore.ieee.org/document/10556805/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [context]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [data]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [content]
+    A ->> H: Suggest [visualization]
+    opt Adjust
+        H ->> A: Adjust [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [reason]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,domain expert,The user provides analytic contexts.
+62,VisCARS: Knowledge Graph-Based Context-Aware Recommender System for Time-Series Data Visualization and Monitoring Dashboards,2025,TVCG,https://ieeexplore.ieee.org/document/10556805/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [context]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [data]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [content]
+    A ->> H: Suggest [visualization]
+    opt Adjust
+        H ->> A: Adjust [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [reason]",,Data Preparation,,,Sequential,Text,,High,Medium,Low,One-shot,Medium,Medium,domain expert,The user selects data.
+62,VisCARS: Knowledge Graph-Based Context-Aware Recommender System for Time-Series Data Visualization and Monitoring Dashboards,2025,TVCG,https://ieeexplore.ieee.org/document/10556805/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [context]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [data]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [content]
+    A ->> H: Suggest [visualization]
+    opt Adjust
+        H ->> A: Adjust [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [reason]",,Visualization,Updater,Recommender,Repetitive,,Vis,Medium,Medium,Medium,Continuous,Low,High,domain expert,The AI recommends content and generates charts.
+62,VisCARS: Knowledge Graph-Based Context-Aware Recommender System for Time-Series Data Visualization and Monitoring Dashboards,2025,TVCG,https://ieeexplore.ieee.org/document/10556805/,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Provide [context]
+
+    note over H,A: Data Preparation
+    H ->> A: Select [data]
+
+    note over H,A: Visualization
+    A ->> H: Recommend [content]
+    A ->> H: Suggest [visualization]
+    opt Adjust
+        H ->> A: Adjust [dashboard]
+    end
+
+    note over H,A: Insight Synthesis
+    A ->> H: Explain [reason]",,Insight Synthesis,,Recommender,Sequential,,Text,Medium,High,Low,One-shot,High,High,domain expert,The AI explains recommendation reasons.
+63,ChartInsighter: An Approach for Mitigating Hallucination in Time-series Chart Summary Generation with A Benchmark Dataset,2025,TVCG,http://arxiv.org/abs/2501.09349,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    H ->> A: Input [chart]
+    A ->> A: Analyze [trend]
+    A ->> A: Collaborate [agents]
+    A ->> A: Validate [consistency]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Generate [summary]
+    opt Verify
+        H ->> A: Identify [error]
+        A ->> H: Correct [summary]
+    end",,Visualization,,Updater,Sequential,Vis,,Medium,Medium,Low,One-shot,Low,High,general user,"The user inputs charts, the AI analyzes trends and validates consistency."
+63,ChartInsighter: An Approach for Mitigating Hallucination in Time-series Chart Summary Generation with A Benchmark Dataset,2025,TVCG,http://arxiv.org/abs/2501.09349,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Visualization
+    H ->> A: Input [chart]
+    A ->> A: Analyze [trend]
+    A ->> A: Collaborate [agents]
+    A ->> A: Validate [consistency]
+
+    note over H,A: Insight Synthesis
+    A ->> H: Generate [summary]
+    opt Verify
+        H ->> A: Identify [error]
+        A ->> H: Correct [summary]
+    end",,Insight Synthesis,Evaluator,"Producer, Refiner",Repetitive,,Text,Medium,High,Medium,Continuous,High,High,general user,"The AI generates summaries, the user corrects errors, the system updates."
+64,Jupybara: Operationalizing a Design Space for Actionable Data Analysis and Storytelling with LLMs,2025,CHI,https://doi.org/10.48550/arXiv.2501.16661,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Propose [complex query]
+
+    note over H,A: Data Preparation
+    A ->> H: Present [analysis plan]
+    H ->> A: Confirm or Edit [plan]
+
+    note over H,A: Visualization
+    A ->> H: Generate [code, narrative, visualizations]
+
+    note over H,A: Insight Synthesis
+    opt Multi-agent mode
+        A ->> A: Collaborate [agents]
+        A ->> H: Deliver [refined actionable insight]
+    end
+    H ->> A: Provide [clarifications or corrections]
+    A ->> H: Update [story, analysis outputs]
+    H ->> H: Interpret [actionable insights]",,Goal Setting,Specifier,,Sequential,Text,,Medium,Medium,Low,One-shot,High,Low,general user,The user inputs complex queries.
+64,Jupybara: Operationalizing a Design Space for Actionable Data Analysis and Storytelling with LLMs,2025,CHI,https://doi.org/10.48550/arXiv.2501.16661,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Propose [complex query]
+
+    note over H,A: Data Preparation
+    A ->> H: Present [analysis plan]
+    H ->> A: Confirm or Edit [plan]
+
+    note over H,A: Visualization
+    A ->> H: Generate [code, narrative, visualizations]
+
+    note over H,A: Insight Synthesis
+    opt Multi-agent mode
+        A ->> A: Collaborate [agents]
+        A ->> H: Deliver [refined actionable insight]
+    end
+    H ->> A: Provide [clarifications or corrections]
+    A ->> H: Update [story, analysis outputs]
+    H ->> H: Interpret [actionable insights]",,Data Preparation,Transformer,Recommender,Decision,,Code,High,Medium,High,One-shot,Medium,Medium,general user,"The AI outputs analysis plans, the user confirms or edits."
+64,Jupybara: Operationalizing a Design Space for Actionable Data Analysis and Storytelling with LLMs,2025,CHI,https://doi.org/10.48550/arXiv.2501.16661,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Propose [complex query]
+
+    note over H,A: Data Preparation
+    A ->> H: Present [analysis plan]
+    H ->> A: Confirm or Edit [plan]
+
+    note over H,A: Visualization
+    A ->> H: Generate [code, narrative, visualizations]
+
+    note over H,A: Insight Synthesis
+    opt Multi-agent mode
+        A ->> A: Collaborate [agents]
+        A ->> H: Deliver [refined actionable insight]
+    end
+    H ->> A: Provide [clarifications or corrections]
+    A ->> H: Update [story, analysis outputs]
+    H ->> H: Interpret [actionable insights]",,Visualization,,Generator,Sequential,,Vis Code,Medium,Medium,Low,One-shot,Low,High,general user,"The AI generates code, narratives, and visualizations."
+64,Jupybara: Operationalizing a Design Space for Actionable Data Analysis and Storytelling with LLMs,2025,CHI,https://doi.org/10.48550/arXiv.2501.16661,"sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Propose [complex query]
+
+    note over H,A: Data Preparation
+    A ->> H: Present [analysis plan]
+    H ->> A: Confirm or Edit [plan]
+
+    note over H,A: Visualization
+    A ->> H: Generate [code, narrative, visualizations]
+
+    note over H,A: Insight Synthesis
+    opt Multi-agent mode
+        A ->> A: Collaborate [agents]
+        A ->> H: Deliver [refined actionable insight]
+    end
+    H ->> A: Provide [clarifications or corrections]
+    A ->> H: Update [story, analysis outputs]
+    H ->> H: Interpret [actionable insights]",,Insight Synthesis,"Evaluator, Selector","Producer, Refiner",Repetitive,,Code Text Vis,Medium,High,Medium,Continuous,High,High,general user,"The AI delivers insights, the user clarifies and interprets."

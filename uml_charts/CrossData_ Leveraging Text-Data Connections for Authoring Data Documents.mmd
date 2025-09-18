@@ -1,0 +1,22 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Write [text]
+
+    note over H,A: Data Preparation
+    A ->> H: Detect [connection]
+
+    note over H,A: Visualization
+    H ->> A: Insert [table]
+    A ->> H: Update [chart]
+
+    note over H,A: Insight Synthesis
+    par Explore
+        H ->> A: Query [data]
+        A ->> H: Return [value]
+    and Revise
+        H ->> A: Edit [text]
+        A ->> H: Sync [data]
+    end

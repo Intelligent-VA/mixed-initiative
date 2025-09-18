@@ -1,0 +1,20 @@
+sequenceDiagram
+    participant H as Human
+    participant A as AI
+
+    note over H,A: Goal Setting
+    H ->> A: Select [result]
+
+    note over H,A: Data Preparation
+    A ->> H: Slice [code]
+
+    note over H,A: Insight Synthesis
+    H ->> A: Review [history]
+    opt Clean
+        H ->> A: Remove [cell]
+        A ->> H: Update [notebook]
+    end
+    opt Compare
+        H ->> A: Request [version]
+        A ->> H: Retrieve [slice]
+    end
